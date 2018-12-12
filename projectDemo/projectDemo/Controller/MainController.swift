@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class MainCell: GenericCell<String> {
+final class MainCell: GenericTableCell<String> {
 
     override var item: String! {
         didSet {

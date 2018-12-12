@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GenericCell<U>: UITableViewCell {
+class GenericTableCell<U>: UITableViewCell {
 
     var item: U!
 
@@ -17,7 +17,7 @@ class GenericCell<U>: UITableViewCell {
     }
 }
 
-class GenericTableViewController<T: GenericCell<U>, U>: UITableViewController {
+class GenericTableViewController<T: GenericTableCell<U>, U>: UITableViewController {
 
     let cellId = "id"
 
@@ -42,9 +42,8 @@ class GenericTableViewController<T: GenericCell<U>, U>: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! GenericCell<U>
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! GenericTableCell<U>
         cell.item = items[indexPath.row]
         return cell
     }
 }
-
