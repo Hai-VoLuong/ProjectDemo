@@ -22,10 +22,25 @@ struct Course: Decodable {
     let numberOfLessons: Int?
 }
 
-final class ParsingJsonController: UIViewController {
+final class ParsingJsonCell: GenericTableCell<Course> {
+    
+    override var item: Course! {
+        didSet {
+            textLabel?.text = item.name
+        }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        backgroundColor = .blue
+        textLabel?.textColor = .white
+    }
+}
+
+final class ParsingJsonController: GenericTableViewController<ParsingJsonCell, Course> {
     
     let jsonString = "https://api.letsbuildthatapp.com/jsondecodable/website_description"
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Parsing Json With Decodable"
@@ -35,8 +50,12 @@ final class ParsingJsonController: UIViewController {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data else { return }
             do {
-                let courses = try JSONDecoder().decode(WebsiteDescription.self, from: data)
-                print("\(courses)\n")
+                let websiteDescription = try JSONDecoder().decode(WebsiteDescription.self, from: data)
+                DispatchQueue.main.async { 
+                    self.items = websiteDescription.courses
+                    self.tableView.reloadData()
+                }
+                
             } catch let err {
                 print("error serializing json, \(err.localizedDescription)")
             }
