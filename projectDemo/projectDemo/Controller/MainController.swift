@@ -27,18 +27,19 @@ final class MainController: GenericTableViewController<MainCell, String> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        items = ["Swiping Page Feature"]
+        title = "Main"
+        items = ["Parsing JSON Swift 4 with Decodable"]
         
-        view.backgroundColor = .gray
+        view.backgroundColor = .white
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(handleNext))
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let swipingVC = SwipingController()
-        navigationController?.pushViewController(swipingVC, animated: true)
+        let parsingJsonVC = ParsingJsonController()
+        navigationController?.pushViewController(parsingJsonVC, animated: true)
     }
 
     @objc func handleNext() {
-        navigationController?.pushViewController(SwipingController(), animated: true)
+        navigationController?.pushViewController(ParsingJsonController(), animated: true)
     }
 }

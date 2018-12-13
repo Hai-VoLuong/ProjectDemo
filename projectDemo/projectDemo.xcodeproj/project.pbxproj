@@ -13,7 +13,7 @@
 		9C7B37E321C112E7009A6C14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C7B37E221C112E7009A6C14 /* Assets.xcassets */; };
 		9C7B37EE21C117E6009A6C14 /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B37ED21C117E6009A6C14 /* Extensions+UIView.swift */; };
 		9C7B37F321C119C4009A6C14 /* Generic+TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B37F221C119C4009A6C14 /* Generic+TableViewController.swift */; };
-		9C7B37F521C11C2B009A6C14 /* SwipingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B37F421C11C2B009A6C14 /* SwipingController.swift */; };
+		9C7B37F521C11C2B009A6C14 /* ParsingJsonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B37F421C11C2B009A6C14 /* ParsingJsonController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		9C7B37E721C112E7009A6C14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C7B37ED21C117E6009A6C14 /* Extensions+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extensions+UIView.swift"; sourceTree = "<group>"; };
 		9C7B37F221C119C4009A6C14 /* Generic+TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Generic+TableViewController.swift"; sourceTree = "<group>"; };
-		9C7B37F421C11C2B009A6C14 /* SwipingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingController.swift; sourceTree = "<group>"; };
+		9C7B37F421C11C2B009A6C14 /* ParsingJsonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsingJsonController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				9C7B37DD21C112E6009A6C14 /* MainController.swift */,
-				9C7B37F421C11C2B009A6C14 /* SwipingController.swift */,
+				9C7B37F421C11C2B009A6C14 /* ParsingJsonController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -167,7 +167,7 @@
 				9C7B37DC21C112E6009A6C14 /* AppDelegate.swift in Sources */,
 				04DF2B5F21C1835E00BAA5E8 /* Generic+CollectionViewController.swift in Sources */,
 				9C7B37F321C119C4009A6C14 /* Generic+TableViewController.swift in Sources */,
-				9C7B37F521C11C2B009A6C14 /* SwipingController.swift in Sources */,
+				9C7B37F521C11C2B009A6C14 /* ParsingJsonController.swift in Sources */,
 				9C7B37EE21C117E6009A6C14 /* Extensions+UIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
