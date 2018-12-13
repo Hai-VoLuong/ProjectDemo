@@ -35,11 +35,15 @@ final class MainController: GenericTableViewController<MainCell, String> {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let parsingJsonVC = ParsingJsonController()
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        let parsingJsonVC = ParsingJsonController(collectionViewLayout: layout)
         navigationController?.pushViewController(parsingJsonVC, animated: true)
     }
 
     @objc func handleNext() {
-        navigationController?.pushViewController(ParsingJsonController(), animated: true)
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        navigationController?.pushViewController(ParsingJsonController(collectionViewLayout: layout), animated: true)
     }
 }
