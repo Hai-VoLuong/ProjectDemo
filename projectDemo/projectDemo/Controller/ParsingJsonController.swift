@@ -46,31 +46,38 @@ final class ParsingJsonCell: GenericCollectionCell<Course> {
 final class ParsingJsonController: GenericCollecitonView<ParsingJsonCell, Course> {
     
     let jsonString = "https://api.letsbuildthatapp.com/jsondecodable/website_description"
+    var courses: [Course]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Demo"
+        title = "Parsing Json With Decoder"
         view.backgroundColor = .yellow
         collectionView.backgroundColor = .white
-        
-        guard let url = URL(string: jsonString) else { return }
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let data = data else { return }
-            do {
-                let websiteDescription = try JSONDecoder().decode(WebsiteDescription.self, from: data)
-                DispatchQueue.main.async {
-                    self.items = websiteDescription.courses
-                    self.collectionView.reloadData()
-                }
-                
-            } catch let err {
-                print("error serializing json, \(err.localizedDescription)")
-            }
-            }.resume()
+
+        fetchCoursesFromWebSite(url: jsonString) { (website) in
+            self.courses = website.courses
+            self.reloadData()
+        }
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 100, height: 50)
+    }
+}
+
+extension ParsingJsonController {
+
+    // reload data
+    private func reloadData() {
+        items = courses ?? []
+        collectionView.reloadData()
+    }
+
+    // fetch courses from website
+    private func fetchCoursesFromWebSite(url: String, completion: @escaping (WebsiteDescription) -> ()) {
+        Service.shared.fetchGenericData(urlString: url) { (websiteDescription: WebsiteDescription) in
+            completion(websiteDescription)
+        }
     }
 }
 
