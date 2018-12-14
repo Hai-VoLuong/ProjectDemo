@@ -17,7 +17,7 @@ class GenericTableCell<U>: UITableViewCell {
     }
 }
 
-class GenericTableViewController<T: GenericTableCell<U>, U>: UITableViewController {
+class GenericTableView<T: GenericTableCell<U>, U>: UITableViewController {
 
     let cellId = "id"
 

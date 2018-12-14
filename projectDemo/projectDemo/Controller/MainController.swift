@@ -15,7 +15,7 @@ final class MainCell: GenericTableCell<String> {
             textLabel?.text = item
         }
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         backgroundColor = .blue
@@ -23,7 +23,7 @@ final class MainCell: GenericTableCell<String> {
     }
 }
 
-final class MainController: GenericTableViewController<MainCell, String> {
+final class MainController: GenericTableView<MainCell, String> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,15 +35,11 @@ final class MainController: GenericTableViewController<MainCell, String> {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        let parsingJsonVC = ParsingJsonController(collectionViewLayout: layout)
-        navigationController?.pushViewController(parsingJsonVC, animated: true)
+        let homeFeedVC = HomeFeedController()
+        navigationController?.pushViewController(homeFeedVC, animated: true)
     }
 
     @objc func handleNext() {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        navigationController?.pushViewController(ParsingJsonController(collectionViewLayout: layout), animated: true)
+       // handle later
     }
 }
