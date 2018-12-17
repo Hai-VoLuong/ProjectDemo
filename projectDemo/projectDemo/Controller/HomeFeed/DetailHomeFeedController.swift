@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class DetailHomeFeedCell: GenericCollectionCell<Course> {
+final class DetailHomeFeedCell: BaseCollectionCell<Course> {
 
     let textLabel: UILabel = {
         let l = UILabel()
@@ -29,7 +29,7 @@ final class DetailHomeFeedCell: GenericCollectionCell<Course> {
     }
 }
 
-final class DetailHomeFeedController: GenericCollecitonView<DetailHomeFeedCell, Course>, UICollectionViewDelegateFlowLayout {
+final class DetailHomeFeedController: BaseCollecitonView<DetailHomeFeedCell, Course>, UICollectionViewDelegateFlowLayout {
 
     var courses: [Course]?
 
