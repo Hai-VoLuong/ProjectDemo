@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0436704321C7DA2C00737158 /* DrapAndDropVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436704221C7DA2C00737158 /* DrapAndDropVideo.swift */; };
 		04967A3D21C403B100C40F09 /* SwipingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04967A3C21C403B100C40F09 /* SwipingController.swift */; };
 		04967A4021C4205400C40F09 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04967A3F21C4205400C40F09 /* MenuController.swift */; };
 		04DF2B5F21C1835E00BAA5E8 /* Generic+CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DF2B5E21C1835E00BAA5E8 /* Generic+CollectionViewController.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0436704221C7DA2C00737158 /* DrapAndDropVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrapAndDropVideo.swift; sourceTree = "<group>"; };
 		04967A3C21C403B100C40F09 /* SwipingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingController.swift; sourceTree = "<group>"; };
 		04967A3F21C4205400C40F09 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		04DF2B5E21C1835E00BAA5E8 /* Generic+CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Generic+CollectionViewController.swift"; sourceTree = "<group>"; };
@@ -51,31 +53,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04967A3A21C4036400C40F09 /* HomeFeed */ = {
+		0436703F21C7D6F800737158 /* 3DrapAndDropVideo */ = {
+			isa = PBXGroup;
+			children = (
+				0436704221C7DA2C00737158 /* DrapAndDropVideo.swift */,
+			);
+			path = 3DrapAndDropVideo;
+			sourceTree = "<group>";
+		};
+		04967A3A21C4036400C40F09 /* 1HomeFeed */ = {
 			isa = PBXGroup;
 			children = (
 				9C7B37F421C11C2B009A6C14 /* HomeFeedController.swift */,
 				9C00318A21C3AA6700110EB8 /* DetailHomeFeedController.swift */,
 			);
+			name = 1HomeFeed;
 			path = HomeFeed;
 			sourceTree = "<group>";
 		};
-		04967A3B21C4038200C40F09 /* Swiping */ = {
+		04967A3B21C4038200C40F09 /* 2Swiping */ = {
 			isa = PBXGroup;
 			children = (
 				9CCF28D121C79F10006C3F83 /* NewItemController.swift */,
 				04967A3C21C403B100C40F09 /* SwipingController.swift */,
 				04967A3F21C4205400C40F09 /* MenuController.swift */,
 			);
+			name = 2Swiping;
 			path = Swiping;
 			sourceTree = "<group>";
 		};
-		04967A3E21C41A0E00C40F09 /* Main */ = {
+		04967A3E21C41A0E00C40F09 /* 0Main */ = {
 			isa = PBXGroup;
 			children = (
 				9C7B37DD21C112E6009A6C14 /* MainController.swift */,
 			);
-			path = Main;
+			path = 0Main;
 			sourceTree = "<group>";
 		};
 		9C00318721C3A50F00110EB8 /* Schema */ = {
@@ -137,9 +149,10 @@
 		9C7B37F121C1194E009A6C14 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				04967A3E21C41A0E00C40F09 /* Main */,
-				04967A3A21C4036400C40F09 /* HomeFeed */,
-				04967A3B21C4038200C40F09 /* Swiping */,
+				04967A3E21C41A0E00C40F09 /* 0Main */,
+				04967A3A21C4036400C40F09 /* 1HomeFeed */,
+				04967A3B21C4038200C40F09 /* 2Swiping */,
+				0436703F21C7D6F800737158 /* 3DrapAndDropVideo */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -219,6 +232,7 @@
 				04967A3D21C403B100C40F09 /* SwipingController.swift in Sources */,
 				04DF2B5F21C1835E00BAA5E8 /* Generic+CollectionViewController.swift in Sources */,
 				04967A4021C4205400C40F09 /* MenuController.swift in Sources */,
+				0436704321C7DA2C00737158 /* DrapAndDropVideo.swift in Sources */,
 				9C7B37F321C119C4009A6C14 /* Generic+TableViewController.swift in Sources */,
 				9CCF28D221C79F10006C3F83 /* NewItemController.swift in Sources */,
 				9C7B37F521C11C2B009A6C14 /* HomeFeedController.swift in Sources */,
