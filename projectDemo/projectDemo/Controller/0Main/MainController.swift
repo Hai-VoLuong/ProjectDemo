@@ -29,7 +29,8 @@ final class MainController: BaseTableView<MainCell, String> {
         super.viewDidLoad()
         title = "Main"
         items = ["Parsing JSON Swift 4 with Decodable",
-                 "Swiping"]
+                 "Swiping",
+                 "Drag and drop video"]
         
         view.backgroundColor = .white
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(handleNext))
@@ -50,6 +51,7 @@ extension MainController {
     enum View: Int {
         case parsingJsonDecodable
         case swiping
+        case dragAndDropVideo
 
         func controller() -> UIViewController {
             let vc: UIViewController!
@@ -59,6 +61,9 @@ extension MainController {
                 return vc
             case .swiping:
                 vc = SwipingController(collectionViewLayout: UICollectionViewFlowLayout())
+                return vc
+            case .dragAndDropVideo:
+                vc = DrapAndDropVideo()
                 return vc
             }
         }
