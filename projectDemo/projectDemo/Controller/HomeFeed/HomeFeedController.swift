@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class HomeFeedCell: GenericTableCell<Video> {
+final class HomeFeedCell: BaseTableCell<Video> {
 
     override var item: Video! {
         didSet {
@@ -22,7 +22,7 @@ final class HomeFeedCell: GenericTableCell<Video> {
     }
 }
 
-final class HomeFeedController: GenericTableView<HomeFeedCell, Video> {
+final class HomeFeedController: BaseTableView<HomeFeedCell, Video> {
     
     let jsonString = "https://api.letsbuildthatapp.com/youtube/home_feed"
     var homeFeed: HomeFeed?

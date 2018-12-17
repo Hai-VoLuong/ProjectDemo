@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GenericCollectionCell<U>: UICollectionViewCell {
+class BaseCollectionCell<U>: UICollectionViewCell {
     
     var item: U!
     
@@ -17,7 +17,7 @@ class GenericCollectionCell<U>: UICollectionViewCell {
     }
 }
 
-class GenericCollecitonView<T: GenericCollectionCell<U>, U>: UICollectionViewController {
+class BaseCollecitonView<T: BaseCollectionCell<U>, U>: UICollectionViewController {
     
     let cellId = "id"
     
@@ -26,14 +26,6 @@ class GenericCollecitonView<T: GenericCollectionCell<U>, U>: UICollectionViewCon
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.register(T.self, forCellWithReuseIdentifier: cellId)
-        let rc = UIRefreshControl()
-        rc.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
-        collectionView.refreshControl = rc
-        
-    }
-    
-    @objc func handleRefresh() {
-        collectionView.refreshControl?.endRefreshing()
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -41,7 +33,7 @@ class GenericCollecitonView<T: GenericCollectionCell<U>, U>: UICollectionViewCon
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! GenericCollectionCell<U>
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! BaseCollectionCell<U>
         cell.item = items[indexPath.row]
         return cell
     }

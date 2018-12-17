@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class MainCell: GenericTableCell<String> {
+final class MainCell: BaseTableCell<String> {
 
     override var item: String! {
         didSet {
@@ -23,7 +23,7 @@ final class MainCell: GenericTableCell<String> {
     }
 }
 
-final class MainController: GenericTableView<MainCell, String> {
+final class MainController: BaseTableView<MainCell, String> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +36,7 @@ final class MainController: GenericTableView<MainCell, String> {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let view = View(rawValue: indexPath.row) else { return }
-        let vc = controller(view: view)
+        guard let vc = View(rawValue: indexPath.row)?.controller() else { return }
         navigationController?.pushViewController(vc, animated: true)
     }
 
@@ -51,19 +50,17 @@ extension MainController {
     enum View: Int {
         case parsingJsonDecodable
         case swiping
-    }
-    
-    private func controller(view: View) -> UIViewController {
-        let vc: UIViewController!
-        switch view {
-        case .parsingJsonDecodable:
-            vc = HomeFeedController()
-            return vc
-        case .swiping:
-            let layout = UICollectionViewFlowLayout()
-            layout.scrollDirection = .vertical
-            vc = SwipingController(collectionViewLayout: layout)
-            return vc
+
+        func controller() -> UIViewController {
+            let vc: UIViewController!
+            switch self {
+            case .parsingJsonDecodable:
+                vc = HomeFeedController()
+                return vc
+            case .swiping:
+                vc = SwipingController(collectionViewLayout: UICollectionViewFlowLayout())
+                return vc
+            }
         }
     }
 }

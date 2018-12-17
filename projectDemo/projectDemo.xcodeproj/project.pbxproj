@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04967A3D21C403B100C40F09 /* SwipingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04967A3C21C403B100C40F09 /* SwipingController.swift */; };
+		04967A4021C4205400C40F09 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04967A3F21C4205400C40F09 /* MenuController.swift */; };
 		04DF2B5F21C1835E00BAA5E8 /* Generic+CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DF2B5E21C1835E00BAA5E8 /* Generic+CollectionViewController.swift */; };
 		9C00318321C34FBA00110EB8 /* Generic+ServerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C00318221C34FBA00110EB8 /* Generic+ServerAPI.swift */; };
 		9C00318921C3A52800110EB8 /* Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C00318821C3A52800110EB8 /* Schema.swift */; };
@@ -18,10 +19,12 @@
 		9C7B37EE21C117E6009A6C14 /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B37ED21C117E6009A6C14 /* Extensions+UIView.swift */; };
 		9C7B37F321C119C4009A6C14 /* Generic+TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B37F221C119C4009A6C14 /* Generic+TableViewController.swift */; };
 		9C7B37F521C11C2B009A6C14 /* HomeFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B37F421C11C2B009A6C14 /* HomeFeedController.swift */; };
+		9CCF28D221C79F10006C3F83 /* NewItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCF28D121C79F10006C3F83 /* NewItemController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		04967A3C21C403B100C40F09 /* SwipingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingController.swift; sourceTree = "<group>"; };
+		04967A3F21C4205400C40F09 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		04DF2B5E21C1835E00BAA5E8 /* Generic+CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Generic+CollectionViewController.swift"; sourceTree = "<group>"; };
 		9C00318221C34FBA00110EB8 /* Generic+ServerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Generic+ServerAPI.swift"; sourceTree = "<group>"; };
 		9C00318821C3A52800110EB8 /* Schema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schema.swift; sourceTree = "<group>"; };
@@ -34,6 +37,7 @@
 		9C7B37ED21C117E6009A6C14 /* Extensions+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extensions+UIView.swift"; sourceTree = "<group>"; };
 		9C7B37F221C119C4009A6C14 /* Generic+TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Generic+TableViewController.swift"; sourceTree = "<group>"; };
 		9C7B37F421C11C2B009A6C14 /* HomeFeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedController.swift; sourceTree = "<group>"; };
+		9CCF28D121C79F10006C3F83 /* NewItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +63,9 @@
 		04967A3B21C4038200C40F09 /* Swiping */ = {
 			isa = PBXGroup;
 			children = (
+				9CCF28D121C79F10006C3F83 /* NewItemController.swift */,
 				04967A3C21C403B100C40F09 /* SwipingController.swift */,
+				04967A3F21C4205400C40F09 /* MenuController.swift */,
 			);
 			path = Swiping;
 			sourceTree = "<group>";
@@ -212,7 +218,9 @@
 				9C7B37DC21C112E6009A6C14 /* AppDelegate.swift in Sources */,
 				04967A3D21C403B100C40F09 /* SwipingController.swift in Sources */,
 				04DF2B5F21C1835E00BAA5E8 /* Generic+CollectionViewController.swift in Sources */,
+				04967A4021C4205400C40F09 /* MenuController.swift in Sources */,
 				9C7B37F321C119C4009A6C14 /* Generic+TableViewController.swift in Sources */,
+				9CCF28D221C79F10006C3F83 /* NewItemController.swift in Sources */,
 				9C7B37F521C11C2B009A6C14 /* HomeFeedController.swift in Sources */,
 				9C00318B21C3AA6700110EB8 /* DetailHomeFeedController.swift in Sources */,
 				9C7B37EE21C117E6009A6C14 /* Extensions+UIView.swift in Sources */,
