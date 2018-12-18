@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class DrapAndDropVideo: UIViewController {
+final class DrapAndDropVideoController: UIViewController {
     
     let imageView: UIImageView = {
         let iv = UIImageView(image: #imageLiteral(resourceName: "tinder"))
@@ -39,7 +39,7 @@ final class DrapAndDropVideo: UIViewController {
     }
 }
 
-extension DrapAndDropVideo {
+extension DrapAndDropVideoController {
     
     @objc private func handleTap() {
         animator.startAnimation()

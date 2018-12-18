@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0436704321C7DA2C00737158 /* DrapAndDropVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436704221C7DA2C00737158 /* DrapAndDropVideo.swift */; };
+		0436704321C7DA2C00737158 /* DrapAndDropVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436704221C7DA2C00737158 /* DrapAndDropVideoController.swift */; };
 		04967A3D21C403B100C40F09 /* SwipingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04967A3C21C403B100C40F09 /* SwipingController.swift */; };
 		04967A4021C4205400C40F09 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04967A3F21C4205400C40F09 /* MenuController.swift */; };
 		04DF2B5F21C1835E00BAA5E8 /* Generic+CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DF2B5E21C1835E00BAA5E8 /* Generic+CollectionViewController.swift */; };
@@ -20,11 +20,12 @@
 		9C7B37EE21C117E6009A6C14 /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B37ED21C117E6009A6C14 /* Extensions+UIView.swift */; };
 		9C7B37F321C119C4009A6C14 /* Generic+TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B37F221C119C4009A6C14 /* Generic+TableViewController.swift */; };
 		9C7B37F521C11C2B009A6C14 /* HomeFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B37F421C11C2B009A6C14 /* HomeFeedController.swift */; };
+		9CC7518521C8F6EA0013BF5E /* ShimmerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC7518421C8F6EA0013BF5E /* ShimmerController.swift */; };
 		9CCF28D221C79F10006C3F83 /* NewItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCF28D121C79F10006C3F83 /* NewItemController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0436704221C7DA2C00737158 /* DrapAndDropVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrapAndDropVideo.swift; sourceTree = "<group>"; };
+		0436704221C7DA2C00737158 /* DrapAndDropVideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrapAndDropVideoController.swift; sourceTree = "<group>"; };
 		04967A3C21C403B100C40F09 /* SwipingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingController.swift; sourceTree = "<group>"; };
 		04967A3F21C4205400C40F09 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		04DF2B5E21C1835E00BAA5E8 /* Generic+CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Generic+CollectionViewController.swift"; sourceTree = "<group>"; };
@@ -39,6 +40,7 @@
 		9C7B37ED21C117E6009A6C14 /* Extensions+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extensions+UIView.swift"; sourceTree = "<group>"; };
 		9C7B37F221C119C4009A6C14 /* Generic+TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Generic+TableViewController.swift"; sourceTree = "<group>"; };
 		9C7B37F421C11C2B009A6C14 /* HomeFeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedController.swift; sourceTree = "<group>"; };
+		9CC7518421C8F6EA0013BF5E /* ShimmerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerController.swift; sourceTree = "<group>"; };
 		9CCF28D121C79F10006C3F83 /* NewItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,7 +58,7 @@
 		0436703F21C7D6F800737158 /* 3DrapAndDropVideo */ = {
 			isa = PBXGroup;
 			children = (
-				0436704221C7DA2C00737158 /* DrapAndDropVideo.swift */,
+				0436704221C7DA2C00737158 /* DrapAndDropVideoController.swift */,
 			);
 			path = 3DrapAndDropVideo;
 			sourceTree = "<group>";
@@ -153,8 +155,17 @@
 				04967A3A21C4036400C40F09 /* 1HomeFeed */,
 				04967A3B21C4038200C40F09 /* 2Swiping */,
 				0436703F21C7D6F800737158 /* 3DrapAndDropVideo */,
+				9CC7518321C8F6D00013BF5E /* 4Shimmer */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		9CC7518321C8F6D00013BF5E /* 4Shimmer */ = {
+			isa = PBXGroup;
+			children = (
+				9CC7518421C8F6EA0013BF5E /* ShimmerController.swift */,
+			);
+			path = 4Shimmer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,7 +243,8 @@
 				04967A3D21C403B100C40F09 /* SwipingController.swift in Sources */,
 				04DF2B5F21C1835E00BAA5E8 /* Generic+CollectionViewController.swift in Sources */,
 				04967A4021C4205400C40F09 /* MenuController.swift in Sources */,
-				0436704321C7DA2C00737158 /* DrapAndDropVideo.swift in Sources */,
+				0436704321C7DA2C00737158 /* DrapAndDropVideoController.swift in Sources */,
+				9CC7518521C8F6EA0013BF5E /* ShimmerController.swift in Sources */,
 				9C7B37F321C119C4009A6C14 /* Generic+TableViewController.swift in Sources */,
 				9CCF28D221C79F10006C3F83 /* NewItemController.swift in Sources */,
 				9C7B37F521C11C2B009A6C14 /* HomeFeedController.swift in Sources */,
