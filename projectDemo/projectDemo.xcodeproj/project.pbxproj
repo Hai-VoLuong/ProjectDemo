@@ -10,6 +10,7 @@
 		0436704321C7DA2C00737158 /* DrapAndDropVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436704221C7DA2C00737158 /* DrapAndDropVideoController.swift */; };
 		04967A3D21C403B100C40F09 /* SwipingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04967A3C21C403B100C40F09 /* SwipingController.swift */; };
 		04967A4021C4205400C40F09 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04967A3F21C4205400C40F09 /* MenuController.swift */; };
+		04D2DC6A21C94BC10054E2EE /* LayoutStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2DC6921C94BC10054E2EE /* LayoutStackViewController.swift */; };
 		04DF2B5F21C1835E00BAA5E8 /* Generic+CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DF2B5E21C1835E00BAA5E8 /* Generic+CollectionViewController.swift */; };
 		9C00318321C34FBA00110EB8 /* Generic+ServerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C00318221C34FBA00110EB8 /* Generic+ServerAPI.swift */; };
 		9C00318921C3A52800110EB8 /* Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C00318821C3A52800110EB8 /* Schema.swift */; };
@@ -28,6 +29,7 @@
 		0436704221C7DA2C00737158 /* DrapAndDropVideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrapAndDropVideoController.swift; sourceTree = "<group>"; };
 		04967A3C21C403B100C40F09 /* SwipingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingController.swift; sourceTree = "<group>"; };
 		04967A3F21C4205400C40F09 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		04D2DC6921C94BC10054E2EE /* LayoutStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutStackViewController.swift; sourceTree = "<group>"; };
 		04DF2B5E21C1835E00BAA5E8 /* Generic+CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Generic+CollectionViewController.swift"; sourceTree = "<group>"; };
 		9C00318221C34FBA00110EB8 /* Generic+ServerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Generic+ServerAPI.swift"; sourceTree = "<group>"; };
 		9C00318821C3A52800110EB8 /* Schema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schema.swift; sourceTree = "<group>"; };
@@ -90,6 +92,14 @@
 				9C7B37DD21C112E6009A6C14 /* MainController.swift */,
 			);
 			path = 0Main;
+			sourceTree = "<group>";
+		};
+		04D2DC6821C94B8C0054E2EE /* 5LayoutStackView */ = {
+			isa = PBXGroup;
+			children = (
+				04D2DC6921C94BC10054E2EE /* LayoutStackViewController.swift */,
+			);
+			path = 5LayoutStackView;
 			sourceTree = "<group>";
 		};
 		9C00318721C3A50F00110EB8 /* Schema */ = {
@@ -156,6 +166,7 @@
 				04967A3B21C4038200C40F09 /* 2Swiping */,
 				0436703F21C7D6F800737158 /* 3DrapAndDropVideo */,
 				9CC7518321C8F6D00013BF5E /* 4Shimmer */,
+				04D2DC6821C94B8C0054E2EE /* 5LayoutStackView */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -247,6 +258,7 @@
 				9CC7518521C8F6EA0013BF5E /* ShimmerController.swift in Sources */,
 				9C7B37F321C119C4009A6C14 /* Generic+TableViewController.swift in Sources */,
 				9CCF28D221C79F10006C3F83 /* NewItemController.swift in Sources */,
+				04D2DC6A21C94BC10054E2EE /* LayoutStackViewController.swift in Sources */,
 				9C7B37F521C11C2B009A6C14 /* HomeFeedController.swift in Sources */,
 				9C00318B21C3AA6700110EB8 /* DetailHomeFeedController.swift in Sources */,
 				9C7B37EE21C117E6009A6C14 /* Extensions+UIView.swift in Sources */,
