@@ -24,5 +24,19 @@ final class AnimationLabelController: UIViewController {
 
         view.addSubview(countingLabel)
         countingLabel.frame = view.frame
+
+        let displayLink = CADisplayLink(target: self, selector: #selector(handleAnimation))
+        displayLink.add(to: .main, forMode: .default)
+    }
+
+    var startValue = 0
+    let endValue = 1000
+
+    @objc func handleAnimation() {
+        countingLabel.text = "\(startValue)"
+        startValue += 1
+        if startValue > endValue {
+            startValue = endValue
+        }
     }
 }
