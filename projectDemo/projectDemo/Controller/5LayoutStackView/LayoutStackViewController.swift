@@ -13,18 +13,24 @@ final class LayoutStackViewController: UIViewController {
     let redView: UIView = {
         let v = UIView()
         v.backgroundColor = .red
+        v.clipsToBounds = true
+        v.layer.cornerRadius = 10
         return v
     }()
     
     let blueView: UIView = {
         let v = UIView()
         v.backgroundColor = .blue
+        v.clipsToBounds = true
+        v.layer.cornerRadius = 10
         return v
     }()
     
     let greenView: UIView = {
         let v = UIView()
         v.backgroundColor = .green
+        v.clipsToBounds = true
+        v.layer.cornerRadius = 10
         return v
     }()
     
