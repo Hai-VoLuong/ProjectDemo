@@ -36,7 +36,6 @@ extension UIView {
         if size.height != 0 {
             self.heightAnchor.constraint(equalToConstant: size.height).isActive = true
         }
-        
     }
     
     func fillSuperview(padding: UIEdgeInsets = .zero) {
@@ -57,5 +56,9 @@ extension UIView {
             trailingAnchor.constraint(equalTo: superviewTrailingAnchor, constant: -padding.right).isActive = true
         }
     }
-    
+
+    func anchorSize(to view: UIView) {
+        widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
+    }
 }
