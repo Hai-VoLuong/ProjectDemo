@@ -77,7 +77,7 @@ extension MainController {
             case .animationLabel:
                 vc = AnimationLabelController()
             case .swipePage:
-                vc = SwipePageController()
+                vc = SwipePageController(collectionViewLayout: UICollectionViewFlowLayout())
             }
             return vc
         }
