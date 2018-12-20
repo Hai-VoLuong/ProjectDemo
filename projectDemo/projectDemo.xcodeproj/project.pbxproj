@@ -26,6 +26,7 @@
 		9C9D398921CA553E0018FBB1 /* SwipePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D398821CA553E0018FBB1 /* SwipePageController.swift */; };
 		9CC7518521C8F6EA0013BF5E /* ShimmerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC7518421C8F6EA0013BF5E /* ShimmerController.swift */; };
 		9CCF28D221C79F10006C3F83 /* NewItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCF28D121C79F10006C3F83 /* NewItemController.swift */; };
+		9CE1D44421CB915D00BA2C8E /* ChainAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1D44321CB915D00BA2C8E /* ChainAnimationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		9C9D398821CA553E0018FBB1 /* SwipePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipePageController.swift; sourceTree = "<group>"; };
 		9CC7518421C8F6EA0013BF5E /* ShimmerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerController.swift; sourceTree = "<group>"; };
 		9CCF28D121C79F10006C3F83 /* NewItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemController.swift; sourceTree = "<group>"; };
+		9CE1D44321CB915D00BA2C8E /* ChainAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainAnimationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 				04D2DC6821C94B8C0054E2EE /* 5LayoutStackView */,
 				9C9D398221C9EBDC0018FBB1 /* 6AnimationLabel */,
 				9C9D398521CA24A60018FBB1 /* 7SwipePage */,
+				9CE1D44221CB913000BA2C8E /* 8ChainAnimation */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -202,6 +205,14 @@
 				9CC7518421C8F6EA0013BF5E /* ShimmerController.swift */,
 			);
 			path = 4Shimmer;
+			sourceTree = "<group>";
+		};
+		9CE1D44221CB913000BA2C8E /* 8ChainAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				9CE1D44321CB915D00BA2C8E /* ChainAnimationController.swift */,
+			);
+			path = 8ChainAnimation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,6 +297,7 @@
 				9CCF28D221C79F10006C3F83 /* NewItemController.swift in Sources */,
 				04D2DC6A21C94BC10054E2EE /* LayoutStackViewController.swift in Sources */,
 				9C7B37F521C11C2B009A6C14 /* HomeFeedController.swift in Sources */,
+				9CE1D44421CB915D00BA2C8E /* ChainAnimationController.swift in Sources */,
 				9C00318B21C3AA6700110EB8 /* DetailHomeFeedController.swift in Sources */,
 				9C7B37EE21C117E6009A6C14 /* Extensions+UIView.swift in Sources */,
 				9C00318321C34FBA00110EB8 /* Generic+ServerAPI.swift in Sources */,

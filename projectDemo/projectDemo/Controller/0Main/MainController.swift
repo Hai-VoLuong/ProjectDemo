@@ -34,7 +34,8 @@ final class MainController: BaseTableView<MainCell, String> {
                  "Shimmer",
                  "Layout Stack View",
                  "Animation Label use CADisplayLink",
-                 "Swipe Pages"]
+                 "Swipe Pages",
+                 "Chain Animations for Impressive"]
         
         view.backgroundColor = .white
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(handleNext))
@@ -60,6 +61,7 @@ extension MainController {
         case layoutStackView
         case animationLabel
         case swipePage
+        case chainAnimation
 
         func controller() -> UIViewController {
             let vc: UIViewController!
@@ -78,6 +80,8 @@ extension MainController {
                 vc = AnimationLabelController()
             case .swipePage:
                 vc = SwipePageController(collectionViewLayout: UICollectionViewFlowLayout())
+            case .chainAnimation:
+                vc = ChainAnimationController()
             }
             return vc
         }
