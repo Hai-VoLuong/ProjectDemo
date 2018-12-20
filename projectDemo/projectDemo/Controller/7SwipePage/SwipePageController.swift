@@ -146,6 +146,20 @@ final class SwipePageController: BaseCollecitonView<SwipePageCell, Page>, UIColl
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: view.frame.height)
     }
+
+    // Support AutoLayout Landscape
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        coordinator.animate(alongsideTransition: { [weak self] (_) in
+            guard let this = self else { return }
+            this.collectionViewLayout.invalidateLayout()
+            if this.pageControl.currentPage == 0 {
+                this.collectionView.contentInset = .zero
+            } else {
+                let indexPath = IndexPath(item: this.pageControl.currentPage, section: 0)
+                this.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            }
+        }) { (_) in }
+    }
 }
 
 extension SwipePageController {
