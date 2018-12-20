@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 final class Schema { }
 
@@ -25,5 +26,12 @@ struct Course: Decodable {
     let id: Int?
     let name: String?
     let duration: String?
+}
+
+// SwipePage
+struct Page {
+    let imageName: UIImage
+    let headerText: String
+    let bodyText: String
 }
 
