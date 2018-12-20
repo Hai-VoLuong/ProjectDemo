@@ -22,6 +22,8 @@
 		9C7B37F321C119C4009A6C14 /* Generic+TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B37F221C119C4009A6C14 /* Generic+TableViewController.swift */; };
 		9C7B37F521C11C2B009A6C14 /* HomeFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B37F421C11C2B009A6C14 /* HomeFeedController.swift */; };
 		9C9D398421C9EC000018FBB1 /* AnimationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D398321C9EBFF0018FBB1 /* AnimationLabel.swift */; };
+		9C9D398721CA24D50018FBB1 /* SwipePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D398621CA24D50018FBB1 /* SwipePage.swift */; };
+		9C9D398921CA553E0018FBB1 /* SwipePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D398821CA553E0018FBB1 /* SwipePageController.swift */; };
 		9CC7518521C8F6EA0013BF5E /* ShimmerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC7518421C8F6EA0013BF5E /* ShimmerController.swift */; };
 		9CCF28D221C79F10006C3F83 /* NewItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCF28D121C79F10006C3F83 /* NewItemController.swift */; };
 /* End PBXBuildFile section */
@@ -44,6 +46,8 @@
 		9C7B37F221C119C4009A6C14 /* Generic+TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Generic+TableViewController.swift"; sourceTree = "<group>"; };
 		9C7B37F421C11C2B009A6C14 /* HomeFeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedController.swift; sourceTree = "<group>"; };
 		9C9D398321C9EBFF0018FBB1 /* AnimationLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationLabel.swift; sourceTree = "<group>"; };
+		9C9D398621CA24D50018FBB1 /* SwipePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipePage.swift; sourceTree = "<group>"; };
+		9C9D398821CA553E0018FBB1 /* SwipePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipePageController.swift; sourceTree = "<group>"; };
 		9CC7518421C8F6EA0013BF5E /* ShimmerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerController.swift; sourceTree = "<group>"; };
 		9CCF28D121C79F10006C3F83 /* NewItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -170,6 +174,7 @@
 				9CC7518321C8F6D00013BF5E /* 4Shimmer */,
 				04D2DC6821C94B8C0054E2EE /* 5LayoutStackView */,
 				9C9D398221C9EBDC0018FBB1 /* 6AnimationLabel */,
+				9C9D398521CA24A60018FBB1 /* 7SwipePage */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -180,6 +185,15 @@
 				9C9D398321C9EBFF0018FBB1 /* AnimationLabel.swift */,
 			);
 			path = 6AnimationLabel;
+			sourceTree = "<group>";
+		};
+		9C9D398521CA24A60018FBB1 /* 7SwipePage */ = {
+			isa = PBXGroup;
+			children = (
+				9C9D398621CA24D50018FBB1 /* SwipePage.swift */,
+				9C9D398821CA553E0018FBB1 /* SwipePageController.swift */,
+			);
+			path = 7SwipePage;
 			sourceTree = "<group>";
 		};
 		9CC7518321C8F6D00013BF5E /* 4Shimmer */ = {
@@ -264,6 +278,7 @@
 				9C7B37DC21C112E6009A6C14 /* AppDelegate.swift in Sources */,
 				04967A3D21C403B100C40F09 /* SwipingController.swift in Sources */,
 				04DF2B5F21C1835E00BAA5E8 /* Generic+CollectionViewController.swift in Sources */,
+				9C9D398921CA553E0018FBB1 /* SwipePageController.swift in Sources */,
 				04967A4021C4205400C40F09 /* MenuController.swift in Sources */,
 				0436704321C7DA2C00737158 /* DrapAndDropVideoController.swift in Sources */,
 				9CC7518521C8F6EA0013BF5E /* ShimmerController.swift in Sources */,
@@ -275,6 +290,7 @@
 				9C7B37EE21C117E6009A6C14 /* Extensions+UIView.swift in Sources */,
 				9C00318321C34FBA00110EB8 /* Generic+ServerAPI.swift in Sources */,
 				9C9D398421C9EC000018FBB1 /* AnimationLabel.swift in Sources */,
+				9C9D398721CA24D50018FBB1 /* SwipePage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

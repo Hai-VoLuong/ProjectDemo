@@ -33,7 +33,8 @@ final class MainController: BaseTableView<MainCell, String> {
                  "Drag and drop video",
                  "Shimmer",
                  "Layout Stack View",
-                 "Animation Label use CADisplayLink"]
+                 "Animation Label use CADisplayLink",
+                 "Swipe Pages"]
         
         view.backgroundColor = .white
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(handleNext))
@@ -58,6 +59,7 @@ extension MainController {
         case shimmer
         case layoutStackView
         case animationLabel
+        case swipePage
 
         func controller() -> UIViewController {
             let vc: UIViewController!
@@ -74,6 +76,8 @@ extension MainController {
                 vc = LayoutStackViewController()
             case .animationLabel:
                 vc = AnimationLabelController()
+            case .swipePage:
+                vc = SwipePageController(collectionViewLayout: UICollectionViewFlowLayout())
             }
             return vc
         }
