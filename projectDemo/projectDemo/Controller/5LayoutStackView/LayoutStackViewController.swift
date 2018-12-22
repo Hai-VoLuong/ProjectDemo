@@ -49,6 +49,6 @@ final class LayoutStackViewController: UIViewController {
         redView.heightAnchor.constraint(equalTo: redView.widthAnchor).isActive = true
         
         blueView.anchor(top: redView.bottomAnchor, leading: nil, bottom: nil, trailing: view.safeAreaLayoutGuide.trailingAnchor, padding: UIEdgeInsets(top: 12, left: 0, bottom: 0, right: 12))
-        blueView.anchorSize(to: redView)
+        blueView.anchorEquaSize(to: redView)
     }
 }

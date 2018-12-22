@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0431119B21CD51D30036C7F0 /* ChainAnimationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0431119A21CD51D30036C7F0 /* ChainAnimationCell.swift */; };
 		0436704321C7DA2C00737158 /* DrapAndDropVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436704221C7DA2C00737158 /* DrapAndDropVideoController.swift */; };
+		044AB9C721CE344D00190B41 /* BlurEffectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044AB9C621CE344D00190B41 /* BlurEffectController.swift */; };
 		04967A3D21C403B100C40F09 /* SwipingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04967A3C21C403B100C40F09 /* SwipingController.swift */; };
 		04967A4021C4205400C40F09 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04967A3F21C4205400C40F09 /* MenuController.swift */; };
 		04D2DC6A21C94BC10054E2EE /* LayoutStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2DC6921C94BC10054E2EE /* LayoutStackViewController.swift */; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		0431119A21CD51D30036C7F0 /* ChainAnimationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainAnimationCell.swift; sourceTree = "<group>"; };
 		0436704221C7DA2C00737158 /* DrapAndDropVideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrapAndDropVideoController.swift; sourceTree = "<group>"; };
+		044AB9C621CE344D00190B41 /* BlurEffectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurEffectController.swift; sourceTree = "<group>"; };
 		04967A3C21C403B100C40F09 /* SwipingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingController.swift; sourceTree = "<group>"; };
 		04967A3F21C4205400C40F09 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		04D2DC6921C94BC10054E2EE /* LayoutStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutStackViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +75,14 @@
 				0436704221C7DA2C00737158 /* DrapAndDropVideoController.swift */,
 			);
 			path = 3DrapAndDropVideo;
+			sourceTree = "<group>";
+		};
+		044AB9C521CE342000190B41 /* 9BlurEffect */ = {
+			isa = PBXGroup;
+			children = (
+				044AB9C621CE344D00190B41 /* BlurEffectController.swift */,
+			);
+			path = 9BlurEffect;
 			sourceTree = "<group>";
 		};
 		04967A3A21C4036400C40F09 /* 1ParsingJsonDecodable */ = {
@@ -180,6 +190,7 @@
 				9C9D398221C9EBDC0018FBB1 /* 6AnimationLabel */,
 				9C9D398521CA24A60018FBB1 /* 7SwipePage */,
 				9CE1D44221CB913000BA2C8E /* 8ChainAnimation */,
+				044AB9C521CE342000190B41 /* 9BlurEffect */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -287,6 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				044AB9C721CE344D00190B41 /* BlurEffectController.swift in Sources */,
 				9C00318921C3A52800110EB8 /* Schema.swift in Sources */,
 				9C7B37DE21C112E6009A6C14 /* MainController.swift in Sources */,
 				9C7B37DC21C112E6009A6C14 /* AppDelegate.swift in Sources */,
