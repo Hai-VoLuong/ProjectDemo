@@ -80,7 +80,7 @@ extension SwipePageCell {
 final class SwipePageController: BaseCollecitonView<SwipePageCell, Page>, UICollectionViewDelegateFlowLayout {
 
     // previousButton
-    let previousButton: UIButton = {
+    private let previousButton: UIButton = {
         let b = UIButton(type: .system)
         b.setTitle("PREVIOUS", for: .normal)
         b.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
@@ -89,7 +89,7 @@ final class SwipePageController: BaseCollecitonView<SwipePageCell, Page>, UIColl
         return b
     }()
 
-    @objc func handlePrev() {
+    @objc private func handlePrev() {
         let prevIndex = max(pageControl.currentPage - 1, 0)
         pageControl.currentPage = prevIndex
         let indexPath = IndexPath(item: prevIndex, section: 0)
@@ -97,7 +97,7 @@ final class SwipePageController: BaseCollecitonView<SwipePageCell, Page>, UIColl
     }
 
     // nextButton
-    let nextButton: UIButton = {
+    private let nextButton: UIButton = {
         let b = UIButton(type: .system)
         b.setTitle("NEXT", for: .normal)
         b.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
@@ -107,7 +107,7 @@ final class SwipePageController: BaseCollecitonView<SwipePageCell, Page>, UIColl
         return b
     }()
 
-    @objc func handleNext() {
+    @objc private func handleNext() {
         let nextIndex = min(pageControl.currentPage + 1, items.count - 1)
         pageControl.currentPage = nextIndex
         let indexPath = IndexPath(item: nextIndex, section: 0)
@@ -115,7 +115,7 @@ final class SwipePageController: BaseCollecitonView<SwipePageCell, Page>, UIColl
     }
 
     // pageControl
-    lazy var pageControl: UIPageControl = {
+    lazy private var pageControl: UIPageControl = {
         let pc = UIPageControl()
         pc.currentPage = 0
         pc.numberOfPages = items.count
@@ -123,6 +123,12 @@ final class SwipePageController: BaseCollecitonView<SwipePageCell, Page>, UIColl
         pc.currentPageIndicatorTintColor = pinkColor
         pc.pageIndicatorTintColor = .gray
         return pc
+    }()
+    
+    private lazy var stackView: UIStackView = {
+        let sv = UIStackView(arrangedSubviews: [previousButton, pageControl, nextButton])
+        sv.distribution = .fillEqually
+        return sv
     }()
 
     override func viewDidLoad() {
@@ -176,10 +182,8 @@ extension SwipePageController {
     }
 
     private func setupBottomControler() {
-        let sv = UIStackView(arrangedSubviews: [previousButton, pageControl, nextButton])
-        sv.distribution = .fillEqually
-        view.addSubview(sv)
-
-        sv.anchor(top: nil, leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor, size: CGSize(width: 0, height: 50))
+        
+        view.addSubview(stackView)
+        stackView.anchor(top: nil, leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor, size: CGSize(width: 0, height: 50))
     }
 }
