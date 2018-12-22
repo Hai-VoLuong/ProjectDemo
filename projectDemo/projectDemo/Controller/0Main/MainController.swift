@@ -35,7 +35,8 @@ final class MainController: BaseTableView<MainCell, String> {
                  "Layout Stack View",
                  "Animation Label use CADisplayLink",
                  "Swipe Pages",
-                 "Chain Animations for Impressive"]
+                 "Chain Animations for Impressive",
+                 "UIViewPropertyAnimator Blur Effect"]
         
         view.backgroundColor = .white
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(handleNext))
@@ -62,6 +63,7 @@ extension MainController {
         case animationLabel
         case swipePage
         case chainAnimation
+        case blurEffect
 
         func controller() -> UIViewController {
             let vc: UIViewController!
@@ -82,6 +84,8 @@ extension MainController {
                 vc = SwipePageController(collectionViewLayout: UICollectionViewFlowLayout())
             case .chainAnimation:
                 vc = ChainAnimationController(collectionViewLayout: UICollectionViewFlowLayout())
+            case .blurEffect:
+                vc = BlurEffectController()
             }
             return vc
         }
