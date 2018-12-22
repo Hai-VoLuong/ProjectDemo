@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0431119B21CD51D30036C7F0 /* ChainAnimationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0431119A21CD51D30036C7F0 /* ChainAnimationCell.swift */; };
 		0436704321C7DA2C00737158 /* DrapAndDropVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436704221C7DA2C00737158 /* DrapAndDropVideoController.swift */; };
 		04967A3D21C403B100C40F09 /* SwipingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04967A3C21C403B100C40F09 /* SwipingController.swift */; };
 		04967A4021C4205400C40F09 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04967A3F21C4205400C40F09 /* MenuController.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0431119A21CD51D30036C7F0 /* ChainAnimationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainAnimationCell.swift; sourceTree = "<group>"; };
 		0436704221C7DA2C00737158 /* DrapAndDropVideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrapAndDropVideoController.swift; sourceTree = "<group>"; };
 		04967A3C21C403B100C40F09 /* SwipingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingController.swift; sourceTree = "<group>"; };
 		04967A3F21C4205400C40F09 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
@@ -73,13 +75,13 @@
 			path = 3DrapAndDropVideo;
 			sourceTree = "<group>";
 		};
-		04967A3A21C4036400C40F09 /* 1HomeFeed */ = {
+		04967A3A21C4036400C40F09 /* 1ParsingJsonDecodable */ = {
 			isa = PBXGroup;
 			children = (
 				9C7B37F421C11C2B009A6C14 /* HomeFeedController.swift */,
 				9C00318A21C3AA6700110EB8 /* DetailHomeFeedController.swift */,
 			);
-			name = 1HomeFeed;
+			name = 1ParsingJsonDecodable;
 			path = HomeFeed;
 			sourceTree = "<group>";
 		};
@@ -170,7 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				04967A3E21C41A0E00C40F09 /* 0Main */,
-				04967A3A21C4036400C40F09 /* 1HomeFeed */,
+				04967A3A21C4036400C40F09 /* 1ParsingJsonDecodable */,
 				04967A3B21C4038200C40F09 /* 2Swiping */,
 				0436703F21C7D6F800737158 /* 3DrapAndDropVideo */,
 				9CC7518321C8F6D00013BF5E /* 4Shimmer */,
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				9CE1D44321CB915D00BA2C8E /* ChainAnimationController.swift */,
+				0431119A21CD51D30036C7F0 /* ChainAnimationCell.swift */,
 			);
 			path = 8ChainAnimation;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				0436704321C7DA2C00737158 /* DrapAndDropVideoController.swift in Sources */,
 				9CC7518521C8F6EA0013BF5E /* ShimmerController.swift in Sources */,
 				9C7B37F321C119C4009A6C14 /* Generic+TableViewController.swift in Sources */,
+				0431119B21CD51D30036C7F0 /* ChainAnimationCell.swift in Sources */,
 				9CCF28D221C79F10006C3F83 /* NewItemController.swift in Sources */,
 				04D2DC6A21C94BC10054E2EE /* LayoutStackViewController.swift in Sources */,
 				9C7B37F521C11C2B009A6C14 /* HomeFeedController.swift in Sources */,

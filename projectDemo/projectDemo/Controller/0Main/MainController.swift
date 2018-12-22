@@ -81,7 +81,7 @@ extension MainController {
             case .swipePage:
                 vc = SwipePageController(collectionViewLayout: UICollectionViewFlowLayout())
             case .chainAnimation:
-                vc = ChainAnimationController()
+                vc = ChainAnimationController(collectionViewLayout: UICollectionViewFlowLayout())
             }
             return vc
         }
