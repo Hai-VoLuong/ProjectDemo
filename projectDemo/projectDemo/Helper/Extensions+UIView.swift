@@ -57,12 +57,12 @@ extension UIView {
         }
     }
 
-    func anchorSize(to view: UIView) {
+    func anchorEquaSize(to view: UIView) {
         widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
     }
     
-    func centerInSuperview(size: CGSize) {
+    func anchorCenterInSuperview(size: CGSize) {
         translatesAutoresizingMaskIntoConstraints = false
         if let superviewCenterXAnchor = superview?.centerXAnchor {
             centerXAnchor.constraint(equalTo: superviewCenterXAnchor).isActive = true
