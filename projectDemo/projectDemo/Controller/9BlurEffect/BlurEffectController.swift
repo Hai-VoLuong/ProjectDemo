@@ -18,8 +18,9 @@ final class BlurEffectController: UIViewController {
         return iv
     }()
     
-     private lazy var slider: UISlider = {
+     private let slider: UISlider = {
         let s = UISlider()
+        
         s.addTarget(self, action: #selector(handleSliderChange), for: .valueChanged)
         return s
     }()
@@ -42,6 +43,10 @@ final class BlurEffectController: UIViewController {
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
         setupViews()
         setupAnimation()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        animator.startAnimation()
     }
     
     @objc private func handleSliderChange(slider: UISlider) {
