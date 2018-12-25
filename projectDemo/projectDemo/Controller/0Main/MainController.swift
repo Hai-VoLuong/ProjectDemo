@@ -37,6 +37,7 @@ final class MainController: BaseTableView<MainCell, String> {
                  "Swipe Pages",
                  "Chain Animations for Impressive",
                  "UIViewPropertyAnimator Blur Effect",
+                 "Stretchy Header",
                  "Animation Like Facebook"]
         
         view.backgroundColor = .white
@@ -65,6 +66,7 @@ extension MainController {
         case swipePage
         case chainAnimation
         case blurEffect
+        case stretchyHeader
         case animationLikeFacebook
 
         func controller() -> UIViewController {
@@ -88,6 +90,8 @@ extension MainController {
                 vc = ChainAnimationController(collectionViewLayout: UICollectionViewFlowLayout())
             case .blurEffect:
                 vc = BlurEffectController()
+            case .stretchyHeader:
+                vc = StretchyController(collectionViewLayout: UICollectionViewFlowLayout())
             case .animationLikeFacebook:
                 vc = AnimationLikeFacebookController()
             }
