@@ -29,6 +29,7 @@
 		9C9D398921CA553E0018FBB1 /* SwipePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D398821CA553E0018FBB1 /* SwipePageController.swift */; };
 		9CC7518521C8F6EA0013BF5E /* ShimmerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC7518421C8F6EA0013BF5E /* ShimmerController.swift */; };
 		9CCF28D221C79F10006C3F83 /* NewItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCF28D121C79F10006C3F83 /* NewItemController.swift */; };
+		9CD1C52421D1DEDD00AF412F /* StretchyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD1C52321D1DEDD00AF412F /* StretchyController.swift */; };
 		9CE1D44421CB915D00BA2C8E /* ChainAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1D44321CB915D00BA2C8E /* ChainAnimationController.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		9C9D398821CA553E0018FBB1 /* SwipePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipePageController.swift; sourceTree = "<group>"; };
 		9CC7518421C8F6EA0013BF5E /* ShimmerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerController.swift; sourceTree = "<group>"; };
 		9CCF28D121C79F10006C3F83 /* NewItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemController.swift; sourceTree = "<group>"; };
+		9CD1C52321D1DEDD00AF412F /* StretchyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyController.swift; sourceTree = "<group>"; };
 		9CE1D44321CB915D00BA2C8E /* ChainAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainAnimationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,12 +89,12 @@
 			path = 9BlurEffect;
 			sourceTree = "<group>";
 		};
-		044AB9C821CE817800190B41 /* 10AnimationLikeFacebook */ = {
+		044AB9C821CE817800190B41 /* 11AnimationLikeFacebook */ = {
 			isa = PBXGroup;
 			children = (
 				044AB9C921CE81AA00190B41 /* AnimationLikeFacebookController.swift */,
 			);
-			path = 10AnimationLikeFacebook;
+			path = 11AnimationLikeFacebook;
 			sourceTree = "<group>";
 		};
 		04967A3A21C4036400C40F09 /* 1ParsingJsonDecodable */ = {
@@ -201,7 +203,8 @@
 				9C9D398521CA24A60018FBB1 /* 7SwipePage */,
 				9CE1D44221CB913000BA2C8E /* 8ChainAnimation */,
 				044AB9C521CE342000190B41 /* 9BlurEffect */,
-				044AB9C821CE817800190B41 /* 10AnimationLikeFacebook */,
+				9CD1C52221D1DEB900AF412F /* 10StretchyHeader */,
+				044AB9C821CE817800190B41 /* 11AnimationLikeFacebook */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -229,6 +232,14 @@
 				9CC7518421C8F6EA0013BF5E /* ShimmerController.swift */,
 			);
 			path = 4Shimmer;
+			sourceTree = "<group>";
+		};
+		9CD1C52221D1DEB900AF412F /* 10StretchyHeader */ = {
+			isa = PBXGroup;
+			children = (
+				9CD1C52321D1DEDD00AF412F /* StretchyController.swift */,
+			);
+			path = 10StretchyHeader;
 			sourceTree = "<group>";
 		};
 		9CE1D44221CB913000BA2C8E /* 8ChainAnimation */ = {
@@ -328,6 +339,7 @@
 				9CE1D44421CB915D00BA2C8E /* ChainAnimationController.swift in Sources */,
 				9C00318B21C3AA6700110EB8 /* DetailHomeFeedController.swift in Sources */,
 				9C7B37EE21C117E6009A6C14 /* Extensions+UIView.swift in Sources */,
+				9CD1C52421D1DEDD00AF412F /* StretchyController.swift in Sources */,
 				9C00318321C34FBA00110EB8 /* Generic+ServerAPI.swift in Sources */,
 				9C9D398421C9EC000018FBB1 /* AnimationLabel.swift in Sources */,
 				9C9D398721CA24D50018FBB1 /* SwipePage.swift in Sources */,
