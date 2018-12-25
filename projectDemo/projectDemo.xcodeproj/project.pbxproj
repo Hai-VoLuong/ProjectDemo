@@ -30,6 +30,7 @@
 		9CC7518521C8F6EA0013BF5E /* ShimmerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC7518421C8F6EA0013BF5E /* ShimmerController.swift */; };
 		9CCF28D221C79F10006C3F83 /* NewItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCF28D121C79F10006C3F83 /* NewItemController.swift */; };
 		9CD1C52421D1DEDD00AF412F /* StretchyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD1C52321D1DEDD00AF412F /* StretchyController.swift */; };
+		9CD1C52721D20DB200AF412F /* BarChartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD1C52621D20DB200AF412F /* BarChartController.swift */; };
 		9CE1D44421CB915D00BA2C8E /* ChainAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1D44321CB915D00BA2C8E /* ChainAnimationController.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		9CC7518421C8F6EA0013BF5E /* ShimmerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerController.swift; sourceTree = "<group>"; };
 		9CCF28D121C79F10006C3F83 /* NewItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemController.swift; sourceTree = "<group>"; };
 		9CD1C52321D1DEDD00AF412F /* StretchyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyController.swift; sourceTree = "<group>"; };
+		9CD1C52621D20DB200AF412F /* BarChartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartController.swift; sourceTree = "<group>"; };
 		9CE1D44321CB915D00BA2C8E /* ChainAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainAnimationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -205,6 +207,7 @@
 				044AB9C521CE342000190B41 /* 9BlurEffect */,
 				9CD1C52221D1DEB900AF412F /* 10StretchyHeader */,
 				044AB9C821CE817800190B41 /* 11AnimationLikeFacebook */,
+				9CD1C52521D20D8200AF412F /* 12BarChart */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -240,6 +243,14 @@
 				9CD1C52321D1DEDD00AF412F /* StretchyController.swift */,
 			);
 			path = 10StretchyHeader;
+			sourceTree = "<group>";
+		};
+		9CD1C52521D20D8200AF412F /* 12BarChart */ = {
+			isa = PBXGroup;
+			children = (
+				9CD1C52621D20DB200AF412F /* BarChartController.swift */,
+			);
+			path = 12BarChart;
 			sourceTree = "<group>";
 		};
 		9CE1D44221CB913000BA2C8E /* 8ChainAnimation */ = {
@@ -342,6 +353,7 @@
 				9CD1C52421D1DEDD00AF412F /* StretchyController.swift in Sources */,
 				9C00318321C34FBA00110EB8 /* Generic+ServerAPI.swift in Sources */,
 				9C9D398421C9EC000018FBB1 /* AnimationLabel.swift in Sources */,
+				9CD1C52721D20DB200AF412F /* BarChartController.swift in Sources */,
 				9C9D398721CA24D50018FBB1 /* SwipePage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

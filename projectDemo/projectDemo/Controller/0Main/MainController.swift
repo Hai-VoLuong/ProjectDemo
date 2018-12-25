@@ -38,7 +38,8 @@ final class MainController: BaseTableView<MainCell, String> {
                  "Chain Animations for Impressive",
                  "UIViewPropertyAnimator Blur Effect",
                  "Stretchy Header",
-                 "Animation Like Facebook"]
+                 "Animation Like Facebook",
+                 "A Bar Chart"]
         
         view.backgroundColor = .white
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(handleNext))
@@ -68,6 +69,7 @@ extension MainController {
         case blurEffect
         case stretchyHeader
         case animationLikeFacebook
+        case barChart
 
         func controller() -> UIViewController {
             let vc: UIViewController!
@@ -94,6 +96,8 @@ extension MainController {
                 vc = StretchyController(collectionViewLayout: UICollectionViewFlowLayout())
             case .animationLikeFacebook:
                 vc = AnimationLikeFacebookController()
+            case .barChart:
+                vc = BarChartController(collectionViewLayout: UICollectionViewFlowLayout())
             }
             return vc
         }
