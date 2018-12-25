@@ -38,7 +38,7 @@ final class ShimmerController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Shimmer"
-        view.backgroundColor = UIColor(white: 1, alpha: 0.1)
+        view.backgroundColor = .blue
 
         view.addSubview(darkTextLabel)
         darkTextLabel.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, size: CGSize(width: 0, height: 400))

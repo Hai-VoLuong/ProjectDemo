@@ -10,6 +10,14 @@ import UIKit
 
 final class AnimationLikeFacebookController: UIViewController {
 
+    private let textLabel: UILabel = {
+        let l = UILabel()
+        l.text = "long tap view"
+        l.textColor = .lightGray
+        l.textAlignment = .center
+        return l
+    }()
+
     private let containerView: UIView = {
         // 1
         let v = UIView()
@@ -60,6 +68,8 @@ final class AnimationLikeFacebookController: UIViewController {
         super.viewDidLoad()
         title = "Animation Like Facebook"
         view.backgroundColor = .white
+        view.addSubview(textLabel)
+        textLabel.fillSuperview()
         view.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress)))
     }
     
@@ -70,21 +80,7 @@ final class AnimationLikeFacebookController: UIViewController {
         case .changed:
             handleGestureChanged(gesture: gesture)
         case .ended:
-            // clean up the animation
-            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: { [weak self] in
-                guard let this = self else { return }
-                let stackView = this.containerView.subviews.first
-                stackView?.subviews.forEach({ (imageView) in
-                    imageView.transform = .identity
-                })
-
-                this.containerView.transform = this.containerView.transform.translatedBy(x: 0, y: 50)
-                this.containerView.alpha = 0
-
-            }, completion: { [weak self] (_) in
-                guard let this = self else { return }
-                this.containerView.removeFromSuperview()
-            })
+            handleGestureEnded()
         default:
             Void()
         }
@@ -93,7 +89,13 @@ final class AnimationLikeFacebookController: UIViewController {
 
 extension AnimationLikeFacebookController {
 
+    // began
     private func handleGestureBegan(gesture: UILongPressGestureRecognizer) {
+        UIView.animate(withDuration: 1, delay: 0, options: .curveEaseOut, animations: { [weak self] in
+            guard let this = self else { return }
+            this.textLabel.alpha = 0
+        })
+
         view.addSubview(containerView)
         
         let pressedLocation = gesture.location(in: self.view)
@@ -108,6 +110,7 @@ extension AnimationLikeFacebookController {
         })
     }
 
+    // change
     private func handleGestureChanged(gesture: UILongPressGestureRecognizer) {
         let pressedLocation = gesture.location(in: containerView)
 
@@ -126,5 +129,25 @@ extension AnimationLikeFacebookController {
                 hitTestView?.transform = CGAffineTransform(translationX: 0, y: -50)
             })
         }
+    }
+
+    // end
+    private func handleGestureEnded() {
+        // clean up the animation
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: { [weak self] in
+            guard let this = self else { return }
+            let stackView = this.containerView.subviews.first
+            stackView?.subviews.forEach({ (imageView) in
+                imageView.transform = .identity
+            })
+
+            this.containerView.transform = this.containerView.transform.translatedBy(x: 0, y: 50)
+            this.containerView.alpha = 0
+
+            }, completion: { [weak self] (_) in
+                guard let this = self else { return }
+                this.containerView.removeFromSuperview()
+                this.textLabel.alpha = 1
+        })
     }
 }
