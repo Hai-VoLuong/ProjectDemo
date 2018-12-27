@@ -93,7 +93,7 @@ extension MainController {
             case .blurEffect:
                 vc = BlurEffectController()
             case .stretchyHeader:
-                vc = StretchyController(collectionViewLayout: UICollectionViewFlowLayout())
+                vc = StretchyController(collectionViewLayout: StretchyHeaderLayout())
             case .animationLikeFacebook:
                 vc = AnimationLikeFacebookController()
             case .barChart:
