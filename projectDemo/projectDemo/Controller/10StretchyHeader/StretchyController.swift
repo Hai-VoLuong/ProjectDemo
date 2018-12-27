@@ -48,15 +48,15 @@ final class StretchyController: BaseCollecitonView<StretchyCell, UIColor>, UICol
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: true)
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        navigationController?.setNavigationBarHidden(false, animated: true)
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Stretchy Header"
-        items = [.blue, .blue]
+        items = [.blue, .blue,.blue, .blue,.blue, .blue,.blue, .blue,.blue, .blue,.blue, .blue,.blue, .blue,.blue, .blue,.blue, .blue,.blue, .blue,.blue, .blue,.blue, .blue,.blue, .blue,.blue, .blue,.blue, .blue,.blue, .blue,]
         setupViews()
     }
 
