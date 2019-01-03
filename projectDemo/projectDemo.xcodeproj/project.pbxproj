@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		042B2BF221DC710A007D125D /* StretchyHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B2BF121DC710A007D125D /* StretchyHeaderCell.swift */; };
 		0431119B21CD51D30036C7F0 /* ChainAnimationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0431119A21CD51D30036C7F0 /* ChainAnimationCell.swift */; };
 		0436704321C7DA2C00737158 /* DrapAndDropVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436704221C7DA2C00737158 /* DrapAndDropVideoController.swift */; };
 		044AB9C721CE344D00190B41 /* BlurEffectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044AB9C621CE344D00190B41 /* BlurEffectController.swift */; };
@@ -18,6 +19,7 @@
 		9C00318321C34FBA00110EB8 /* Generic+ServerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C00318221C34FBA00110EB8 /* Generic+ServerAPI.swift */; };
 		9C00318921C3A52800110EB8 /* Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C00318821C3A52800110EB8 /* Schema.swift */; };
 		9C00318B21C3AA6700110EB8 /* DetailHomeFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C00318A21C3AA6700110EB8 /* DetailHomeFeedController.swift */; };
+		9C4AA2C421D46FC000E035CE /* StretchyHeaderLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4AA2C321D46FC000E035CE /* StretchyHeaderLayout.swift */; };
 		9C7B37DC21C112E6009A6C14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B37DB21C112E6009A6C14 /* AppDelegate.swift */; };
 		9C7B37DE21C112E6009A6C14 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B37DD21C112E6009A6C14 /* MainController.swift */; };
 		9C7B37E321C112E7009A6C14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C7B37E221C112E7009A6C14 /* Assets.xcassets */; };
@@ -36,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		042B2BF121DC710A007D125D /* StretchyHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeaderCell.swift; sourceTree = "<group>"; };
 		0431119A21CD51D30036C7F0 /* ChainAnimationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainAnimationCell.swift; sourceTree = "<group>"; };
 		0436704221C7DA2C00737158 /* DrapAndDropVideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrapAndDropVideoController.swift; sourceTree = "<group>"; };
 		044AB9C621CE344D00190B41 /* BlurEffectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurEffectController.swift; sourceTree = "<group>"; };
@@ -47,6 +50,7 @@
 		9C00318221C34FBA00110EB8 /* Generic+ServerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Generic+ServerAPI.swift"; sourceTree = "<group>"; };
 		9C00318821C3A52800110EB8 /* Schema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schema.swift; sourceTree = "<group>"; };
 		9C00318A21C3AA6700110EB8 /* DetailHomeFeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHomeFeedController.swift; sourceTree = "<group>"; };
+		9C4AA2C321D46FC000E035CE /* StretchyHeaderLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeaderLayout.swift; sourceTree = "<group>"; };
 		9C7B37D821C112E6009A6C14 /* projectDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projectDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C7B37DB21C112E6009A6C14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C7B37DD21C112E6009A6C14 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
@@ -244,6 +248,8 @@
 			isa = PBXGroup;
 			children = (
 				9CD1C52321D1DEDD00AF412F /* StretchyController.swift */,
+				9C4AA2C321D46FC000E035CE /* StretchyHeaderLayout.swift */,
+				042B2BF121DC710A007D125D /* StretchyHeaderCell.swift */,
 			);
 			path = 10StretchyHeader;
 			sourceTree = "<group>";
@@ -352,6 +358,7 @@
 				9C9D398921CA553E0018FBB1 /* SwipePageController.swift in Sources */,
 				04967A4021C4205400C40F09 /* MenuController.swift in Sources */,
 				0436704321C7DA2C00737158 /* DrapAndDropVideoController.swift in Sources */,
+				042B2BF221DC710A007D125D /* StretchyHeaderCell.swift in Sources */,
 				9CC7518521C8F6EA0013BF5E /* ShimmerController.swift in Sources */,
 				9C7B37F321C119C4009A6C14 /* Generic+TableViewController.swift in Sources */,
 				0431119B21CD51D30036C7F0 /* ChainAnimationCell.swift in Sources */,
@@ -361,6 +368,7 @@
 				9CE1D44421CB915D00BA2C8E /* ChainAnimationController.swift in Sources */,
 				9C00318B21C3AA6700110EB8 /* DetailHomeFeedController.swift in Sources */,
 				9CD1C52D21D23D6000AF412F /* GroupMessagerController.swift in Sources */,
+				9C4AA2C421D46FC000E035CE /* StretchyHeaderLayout.swift in Sources */,
 				9C7B37EE21C117E6009A6C14 /* Extensions+UIView.swift in Sources */,
 				9CD1C52421D1DEDD00AF412F /* StretchyController.swift in Sources */,
 				9C00318321C34FBA00110EB8 /* Generic+ServerAPI.swift in Sources */,

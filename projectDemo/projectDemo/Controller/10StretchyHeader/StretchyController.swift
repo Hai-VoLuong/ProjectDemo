@@ -8,27 +8,6 @@
 
 import UIKit
 
-final class StretchyHeaderCell: UICollectionReusableView {
-
-    private let imageView: UIImageView = {
-        let iv = UIImageView()
-        iv.image = #imageLiteral(resourceName: "tinder")
-        iv.contentMode = .scaleAspectFill
-        return iv
-    }()
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        backgroundColor = .red
-        addSubview(imageView)
-        imageView.fillSuperview()
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
 final class StretchyCell: BaseCollectionCell<UIColor> {
 
     override var item: UIColor! {
@@ -42,6 +21,7 @@ final class StretchyController: BaseCollecitonView<StretchyCell, UIColor>, UICol
 
     private let headerId = "headerId"
     private let paddingCell: CGFloat = 16
+    private var headerView: StretchyHeaderCell!
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -52,25 +32,40 @@ final class StretchyController: BaseCollecitonView<StretchyCell, UIColor>, UICol
         super.viewDidAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        headerView.animator.stopAnimation(true)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Stretchy Header"
-        items = [.blue, .blue]
+        items = [.blue, .blue,.blue, .blue,.blue, .blue,.blue, .blue,.blue, .blue,.blue, .blue]
         setupViews()
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contentOffsetY = scrollView.contentOffset.y
+        
+        if contentOffsetY > 0 {
+            headerView.animator.fractionComplete = 0
+            return
+        }
+        
+        headerView.animator.fractionComplete = abs(contentOffsetY) / 100
+    }
 
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath)
-        return header
+        headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as! StretchyHeaderCell
+        return headerView
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.width, height: 200)
+        return CGSize(width: view.frame.width, height: 300)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
