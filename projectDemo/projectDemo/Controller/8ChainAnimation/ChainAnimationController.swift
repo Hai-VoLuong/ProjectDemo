@@ -64,8 +64,6 @@ final class ChainAnimationController: BaseCollecitonView<ChainAnimationCell, Pag
         collectionView.backgroundColor = .white
         navigationItem.title = "Chain Animations"
         navigationController?.navigationBar.prefersLargeTitles = true
-        let cell = ChainAnimationCell()
-        cell.delegate = self
         items = [Page(imageName: #imageLiteral(resourceName: "bear"), headerText: "Welcome", bodyText: "Hi, Hai!\nThanks for downloading our application."),
                  Page(imageName: #imageLiteral(resourceName: "bear"), headerText: "Awesome People", bodyText: "We work hard every day to make sure you don't have to."),
                  Page(imageName: #imageLiteral(resourceName: "bear"), headerText: "Mission Statement", bodyText: "Here at company XYZ, no stone is left unturned when looking for the BEST Solutions."),

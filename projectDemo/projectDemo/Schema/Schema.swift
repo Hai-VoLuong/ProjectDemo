@@ -35,3 +35,8 @@ struct Page {
     let bodyText: String
 }
 
+struct ChatMessage {
+    let text: String
+    let isInComing: Bool
+}
+
