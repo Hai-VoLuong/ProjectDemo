@@ -65,7 +65,7 @@ final class GroupMessagerCell: BaseTableCell<ChatMessage> {
         addSubview(bubbleBackgroundView)
         addSubview(messageLabel)
 
-        let constraints = [messageLabel.topAnchor.constraint(equalTo: topAnchor, constant: 32),
+        let constraints = [messageLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16),
                            messageLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -32),
                            messageLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 250),
                         
@@ -82,6 +82,29 @@ final class GroupMessagerCell: BaseTableCell<ChatMessage> {
 }
 
 final class GroupMessagerController: BaseTableView<GroupMessagerCell, ChatMessage> {
+    
+    class DateHeaderLabel: UILabel {
+        
+        override init(frame: CGRect) {
+            super.init(frame: frame)
+            backgroundColor = .green
+            textAlignment = .center
+            translatesAutoresizingMaskIntoConstraints = false
+            font = UIFont.boldSystemFont(ofSize: 14)
+        }
+        
+        required init?(coder aDecoder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+        
+        override var intrinsicContentSize: CGSize {
+            let originalContentSize = super.intrinsicContentSize
+            let height = originalContentSize.height + 12
+            layer.cornerRadius = height / 2
+            layer.masksToBounds = true
+            return CGSize(width: originalContentSize.width + 20, height: height)
+        }
+    }
     
     let chatMessages = [
         [
@@ -110,15 +133,28 @@ final class GroupMessagerController: BaseTableView<GroupMessagerCell, ChatMessag
         return chatMessages.count
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if let messageInSection = chatMessages[section].first {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MM/dd/yyyy"
             let dateString = dateFormatter.string(from: messageInSection.date)
-            return dateString
+            
+            let dateLabel = DateHeaderLabel()
+            dateLabel.text = dateString
+            
+            let containerView = UIView()
+            containerView.addSubview(dateLabel)
+            
+            dateLabel.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
+            dateLabel.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
+            
+            return containerView
         }
-        
-        return "\(Date())"
+        return nil
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
