@@ -9,11 +9,23 @@
 import UIKit
 
 extension Date {
+    
     static func dateFromCustomString(customString: String) -> Date {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy"
         return dateFormatter.date(from: customString) ?? Date()
     }
+    
+    func reduceToMonthDayYear() -> Date {
+        let calendar = Calendar.current
+        let month = calendar.component(.month, from: self)
+        let day = calendar.component(.day, from: self)
+        let year = calendar.component(.year, from: self)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        return dateFormatter.date(from: "\(month)/\(day)/\(year)") ?? Date()
+    }
+
 }
 
 final class GroupMessagerCell: BaseTableCell<ChatMessage> {
@@ -40,8 +52,7 @@ final class GroupMessagerCell: BaseTableCell<ChatMessage> {
     override var item: ChatMessage! {
         didSet {
             messageLabel.text = item.text
-            messageLabel.textColor = item.isIncoming ? .black : .white
-            bubbleBackgroundView.backgroundColor = item.isIncoming ? .white : .darkGray
+            bubbleBackgroundView.backgroundColor = item.isIncoming ? .white : .green
             
             // check left of right of messages
             if item.isIncoming {
@@ -106,31 +117,27 @@ final class GroupMessagerController: BaseTableView<GroupMessagerCell, ChatMessag
         }
     }
     
-    let chatMessages = [
-        [
-            ChatMessage(text: "Here's my very first message", isIncoming: true, date: Date.dateFromCustomString(customString: "08/03/2018")),
-            ChatMessage(text: "I'm going to message another long message that will word wrap", isIncoming: true, date: Date.dateFromCustomString(customString: "08/03/2018")),
-            ],
-        [
-            ChatMessage(text: "I'm going to message another long message that will word wrap, I'm going to message another long message that will word wrap, I'm going to message another long message that will word wrap", isIncoming: false, date: Date.dateFromCustomString(customString: "09/15/2018")),
-            ChatMessage(text: "Yo, dawg, Whaddup!", isIncoming: false, date: Date()),
-            ChatMessage(text: "This message should appear on the left with a white background bubble", isIncoming: true, date: Date.dateFromCustomString(customString: "09/15/2018")),
-            ],
-        [
-            ChatMessage(text: "Third Section message", isIncoming: true, date: Date.dateFromCustomString(customString: "10/31/2018")),
-            ChatMessage(text: "I'm going to message another long message that will word wrap, I'm going to message another long message that will word wrap, I'm going to message another long message that will word wrap", isIncoming: false, date: Date.dateFromCustomString(customString: "09/15/2018"))
-        ]
+    // get data from server
+    let messagesFromServer = [
+        ChatMessage(text: "Here's my very first message", isIncoming: true, date: Date.dateFromCustomString(customString: "08/03/2018")),
+        ChatMessage(text: "I'm going to message another long message that will word wrap", isIncoming: true, date: Date.dateFromCustomString(customString: "08/03/2018")),
+        ChatMessage(text: "I'm going to message another long message that will word wrap, I'm going to message another long message that will word wrap, I'm going to message another long message that will word wrap", isIncoming: false, date: Date.dateFromCustomString(customString: "09/15/2018")),
+        ChatMessage(text: "Yo, dawg, Whaddup!", isIncoming: false, date: Date()),
+        ChatMessage(text: "This message should appear on the left with a white background bubble", isIncoming: true, date: Date.dateFromCustomString(customString: "09/15/2018")),
+        ChatMessage(text: "Third Section message", isIncoming: true, date: Date.dateFromCustomString(customString: "10/31/2018"))
     ]
+
+    var chatMessages = [[ChatMessage]]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Groups Messager"
         view.backgroundColor = .white
         setupTableView()
+        getDataFromServer()
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return chatMessages.count
+    override func numberOfSections(in tableView: UITableView) -> Int {        return chatMessages.count
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -173,6 +180,20 @@ extension GroupMessagerController {
     private func setupTableView() {
         tableView.separatorStyle = .none
         tableView.backgroundColor = UIColor(white: 0.95, alpha: 1)
-        tableView.register(GroupMessagerCell.self, forCellReuseIdentifier: cellId)
+    }
+    
+    private func getDataFromServer() {
+        
+        // group messages theo ngày tháng năm
+        let groupedMessages = Dictionary(grouping: messagesFromServer) { (element) -> Date in
+            return element.date.reduceToMonthDayYear()
+        }
+
+        // sort message
+        let sortedKeys = groupedMessages.keys.sorted()
+        sortedKeys.forEach { (key) in
+            let values = groupedMessages[key]
+            chatMessages.append(values ?? [])
+        }
     }
 }
