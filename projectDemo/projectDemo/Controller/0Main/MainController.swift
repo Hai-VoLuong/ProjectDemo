@@ -40,7 +40,8 @@ final class MainController: BaseTableView<MainCell, String> {
                  "Stretchy Header",
                  "Animation Like Facebook",
                  "A Bar Chart",
-                 "Groups Messages"]
+                 "Groups Messages",
+                 "Firebase Message"]
         
         view.backgroundColor = .white
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(handleNext))
@@ -72,6 +73,7 @@ extension MainController {
         case animationLikeFacebook
         case barChart
         case groupMessager
+        case firebaseMessage
 
         func controller() -> UIViewController {
             let vc: UIViewController!
@@ -102,6 +104,8 @@ extension MainController {
                 vc = BarChartController(collectionViewLayout: UICollectionViewFlowLayout())
             case .groupMessager:
                 vc = GroupMessagerController()
+            case .firebaseMessage:
+                vc = FirebaseMessageController()
             }
             return vc
         }

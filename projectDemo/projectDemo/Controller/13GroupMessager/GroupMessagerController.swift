@@ -137,7 +137,8 @@ final class GroupMessagerController: BaseTableView<GroupMessagerCell, ChatMessag
         getDataFromServer()
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {        return chatMessages.count
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return chatMessages.count
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

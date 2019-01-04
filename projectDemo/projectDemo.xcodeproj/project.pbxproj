@@ -14,6 +14,7 @@
 		044AB9CA21CE81AA00190B41 /* AnimationLikeFacebookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044AB9C921CE81AA00190B41 /* AnimationLikeFacebookController.swift */; };
 		04967A3D21C403B100C40F09 /* SwipingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04967A3C21C403B100C40F09 /* SwipingController.swift */; };
 		04967A4021C4205400C40F09 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04967A3F21C4205400C40F09 /* MenuController.swift */; };
+		04C2EC4121DFA1AD0049DBD6 /* FirebaseMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C2EC4021DFA1AD0049DBD6 /* FirebaseMessageController.swift */; };
 		04D2DC6A21C94BC10054E2EE /* LayoutStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2DC6921C94BC10054E2EE /* LayoutStackViewController.swift */; };
 		04DF2B5F21C1835E00BAA5E8 /* Generic+CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DF2B5E21C1835E00BAA5E8 /* Generic+CollectionViewController.swift */; };
 		9C00318321C34FBA00110EB8 /* Generic+ServerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C00318221C34FBA00110EB8 /* Generic+ServerAPI.swift */; };
@@ -45,6 +46,7 @@
 		044AB9C921CE81AA00190B41 /* AnimationLikeFacebookController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationLikeFacebookController.swift; sourceTree = "<group>"; };
 		04967A3C21C403B100C40F09 /* SwipingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingController.swift; sourceTree = "<group>"; };
 		04967A3F21C4205400C40F09 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		04C2EC4021DFA1AD0049DBD6 /* FirebaseMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseMessageController.swift; sourceTree = "<group>"; };
 		04D2DC6921C94BC10054E2EE /* LayoutStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutStackViewController.swift; sourceTree = "<group>"; };
 		04DF2B5E21C1835E00BAA5E8 /* Generic+CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Generic+CollectionViewController.swift"; sourceTree = "<group>"; };
 		9C00318221C34FBA00110EB8 /* Generic+ServerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Generic+ServerAPI.swift"; sourceTree = "<group>"; };
@@ -134,6 +136,14 @@
 			path = 0Main;
 			sourceTree = "<group>";
 		};
+		04C2EC3F21DFA17C0049DBD6 /* 14firebaseMessage */ = {
+			isa = PBXGroup;
+			children = (
+				04C2EC4021DFA1AD0049DBD6 /* FirebaseMessageController.swift */,
+			);
+			path = 14firebaseMessage;
+			sourceTree = "<group>";
+		};
 		04D2DC6821C94B8C0054E2EE /* 5LayoutStackView */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +225,7 @@
 				044AB9C821CE817800190B41 /* 11AnimationLikeFacebook */,
 				9CD1C52521D20D8200AF412F /* 12BarChart */,
 				9CD1C52B21D23D3D00AF412F /* 13GroupMessager */,
+				04C2EC3F21DFA17C0049DBD6 /* 14firebaseMessage */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -372,6 +383,7 @@
 				9C7B37EE21C117E6009A6C14 /* Extensions+UIView.swift in Sources */,
 				9CD1C52421D1DEDD00AF412F /* StretchyController.swift in Sources */,
 				9C00318321C34FBA00110EB8 /* Generic+ServerAPI.swift in Sources */,
+				04C2EC4121DFA1AD0049DBD6 /* FirebaseMessageController.swift in Sources */,
 				9C9D398421C9EC000018FBB1 /* AnimationLabel.swift in Sources */,
 				9CD1C52721D20DB200AF412F /* BarChartController.swift in Sources */,
 				9C9D398721CA24D50018FBB1 /* SwipePage.swift in Sources */,
