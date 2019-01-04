@@ -33,6 +33,7 @@
 		9CCF28D221C79F10006C3F83 /* NewItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCF28D121C79F10006C3F83 /* NewItemController.swift */; };
 		9CD1C52421D1DEDD00AF412F /* StretchyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD1C52321D1DEDD00AF412F /* StretchyController.swift */; };
 		9CD1C52721D20DB200AF412F /* BarChartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD1C52621D20DB200AF412F /* BarChartController.swift */; };
+		9CD1C52D21D23D6000AF412F /* GroupMessagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD1C52C21D23D6000AF412F /* GroupMessagerController.swift */; };
 		9CE1D44421CB915D00BA2C8E /* ChainAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1D44321CB915D00BA2C8E /* ChainAnimationController.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		9CCF28D121C79F10006C3F83 /* NewItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemController.swift; sourceTree = "<group>"; };
 		9CD1C52321D1DEDD00AF412F /* StretchyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyController.swift; sourceTree = "<group>"; };
 		9CD1C52621D20DB200AF412F /* BarChartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartController.swift; sourceTree = "<group>"; };
+		9CD1C52C21D23D6000AF412F /* GroupMessagerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMessagerController.swift; sourceTree = "<group>"; };
 		9CE1D44321CB915D00BA2C8E /* ChainAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainAnimationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -212,6 +214,7 @@
 				9CD1C52221D1DEB900AF412F /* 10StretchyHeader */,
 				044AB9C821CE817800190B41 /* 11AnimationLikeFacebook */,
 				9CD1C52521D20D8200AF412F /* 12BarChart */,
+				9CD1C52B21D23D3D00AF412F /* 13GroupMessager */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -257,6 +260,14 @@
 				9CD1C52621D20DB200AF412F /* BarChartController.swift */,
 			);
 			path = 12BarChart;
+			sourceTree = "<group>";
+		};
+		9CD1C52B21D23D3D00AF412F /* 13GroupMessager */ = {
+			isa = PBXGroup;
+			children = (
+				9CD1C52C21D23D6000AF412F /* GroupMessagerController.swift */,
+			);
+			path = 13GroupMessager;
 			sourceTree = "<group>";
 		};
 		9CE1D44221CB913000BA2C8E /* 8ChainAnimation */ = {
@@ -356,6 +367,7 @@
 				9C7B37F521C11C2B009A6C14 /* HomeFeedController.swift in Sources */,
 				9CE1D44421CB915D00BA2C8E /* ChainAnimationController.swift in Sources */,
 				9C00318B21C3AA6700110EB8 /* DetailHomeFeedController.swift in Sources */,
+				9CD1C52D21D23D6000AF412F /* GroupMessagerController.swift in Sources */,
 				9C4AA2C421D46FC000E035CE /* StretchyHeaderLayout.swift in Sources */,
 				9C7B37EE21C117E6009A6C14 /* Extensions+UIView.swift in Sources */,
 				9CD1C52421D1DEDD00AF412F /* StretchyController.swift in Sources */,
