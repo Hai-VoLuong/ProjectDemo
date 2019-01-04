@@ -35,8 +35,10 @@ struct Page {
     let bodyText: String
 }
 
+// group messages
 struct ChatMessage {
     let text: String
-    let isInComing: Bool
+    let isIncoming: Bool
+    let date: Date
 }
 
