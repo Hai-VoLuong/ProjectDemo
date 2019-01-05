@@ -48,6 +48,7 @@
 		044AB9C621CE344D00190B41 /* BlurEffectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurEffectController.swift; sourceTree = "<group>"; };
 		044AB9C921CE81AA00190B41 /* AnimationLikeFacebookController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationLikeFacebookController.swift; sourceTree = "<group>"; };
 		047A8F6321E05911008F12D6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		048ACDDD21E0A9390068C4F3 /* projectDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = projectDemo.entitlements; sourceTree = "<group>"; };
 		04967A3C21C403B100C40F09 /* SwipingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingController.swift; sourceTree = "<group>"; };
 		04967A3F21C4205400C40F09 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		04C2EC4021DFA1AD0049DBD6 /* FirebaseMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseMessageController.swift; sourceTree = "<group>"; };
@@ -200,6 +201,7 @@
 		9C7B37DA21C112E6009A6C14 /* projectDemo */ = {
 			isa = PBXGroup;
 			children = (
+				048ACDDD21E0A9390068C4F3 /* projectDemo.entitlements */,
 				9C00318721C3A50F00110EB8 /* Schema */,
 				9C7B37F021C118F9009A6C14 /* Config */,
 				9C7B37EF21C118E2009A6C14 /* Helper */,
@@ -354,6 +356,11 @@
 				TargetAttributes = {
 					9C7B37D721C112E6009A6C14 = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};

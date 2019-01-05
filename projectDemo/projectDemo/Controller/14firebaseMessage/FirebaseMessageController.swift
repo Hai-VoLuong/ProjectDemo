@@ -14,9 +14,6 @@ final class FirebaseMessageController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let ref = Database.database().reference(fromURL: "https://projectdemo-aac9e.firebaseio.com/")
-//        ref.updateChildValues(["SomeValue" : 12345])
-        
         view.backgroundColor = .white
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
     }
