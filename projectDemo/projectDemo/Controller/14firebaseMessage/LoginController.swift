@@ -117,7 +117,7 @@ extension LoginController {
         
         // add profile image
         view.addSubview(profileImage)
-        profileImage.anchorCenterInSuperview(size: CGSize(width: 150, height: 150))
-        profileImage.bottomAnchor.constraint(equalTo: containerView.topAnchor, constant: -12).isActive = true
+        profileImage.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        profileImage.anchor(top: nil, leading: nil, bottom: containerView.topAnchor, trailing: nil, padding: .init(top: 0, left: 0, bottom: 12, right: 0), size: .init(width: 150, height: 150))
     }
 }
