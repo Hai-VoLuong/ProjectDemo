@@ -18,6 +18,7 @@ final class FirebaseMessageController: UIViewController {
     }
     
     @objc private func handleLogout() {
-        
+        let loginVC = LoginController()
+        present(loginVC, animated: true, completion: nil)
     }
 }
