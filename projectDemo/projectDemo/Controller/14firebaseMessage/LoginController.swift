@@ -100,10 +100,47 @@ final class LoginController: UIViewController {
         iv.contentMode = .scaleAspectFill
         return iv
     }()
+    
+    // segment control
+    private lazy var loginRegisterSegmentedControl: UISegmentedControl = {
+        let sc = UISegmentedControl(items: ["Login", "Register"])
+        sc.tintColor = .white
+        sc.selectedSegmentIndex = 1
+        sc.addTarget(self, action: #selector(handleLoginRegisterChange), for: .valueChanged)
+        return sc
+    }()
+    
+    @objc private func handleLoginRegisterChange() {
+        let title = loginRegisterSegmentedControl.titleForSegment(at: loginRegisterSegmentedControl.selectedSegmentIndex)
+        loginRegisterButton.setTitle(title, for: .normal)
+        
+        // handle segment control when tap login or register
+        containerViewHeightAnchor.constant = loginRegisterSegmentedControl.selectedSegmentIndex == 0 ? 100 : 150
+        
+        nameTextFieldHeightAnchor.isActive = false
+        nameTextFieldHeightAnchor = nameTextField.heightAnchor.constraint(equalTo: containerView.heightAnchor, multiplier:
+        loginRegisterSegmentedControl.selectedSegmentIndex == 0 ? 0 : 1/3)
+        nameTextFieldHeightAnchor.isActive = true
+        
+        emailTextFieldHeightAnchor.isActive = false
+        emailTextFieldHeightAnchor = emailTextField.heightAnchor.constraint(equalTo: containerView.heightAnchor, multiplier: loginRegisterSegmentedControl.selectedSegmentIndex == 0 ? 1/2 : 1/3)
+        emailTextFieldHeightAnchor.isActive = true
+        
+        passwordTextFieldHeightAnchor.isActive = false
+        passwordTextFieldHeightAnchor = passwordTextField.heightAnchor.constraint(equalTo: containerView.heightAnchor, multiplier: loginRegisterSegmentedControl.selectedSegmentIndex == 0 ? 1/2 : 1/3)
+        passwordTextFieldHeightAnchor.isActive = true
+    }
 
+    // life circle
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+    
+    // handle segment control when tap login or register
+    private var containerViewHeightAnchor: NSLayoutConstraint!
+    private var nameTextFieldHeightAnchor: NSLayoutConstraint!
+    private var emailTextFieldHeightAnchor: NSLayoutConstraint!
+    private var passwordTextFieldHeightAnchor: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,12 +156,14 @@ extension LoginController {
         containerView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         containerView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         containerView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -24).isActive = true
-        containerView.heightAnchor.constraint(equalToConstant: 250).isActive = true
+        containerViewHeightAnchor = containerView.heightAnchor.constraint(equalToConstant: 250)
+        containerViewHeightAnchor.isActive = true
         
         // add name text field
         containerView.addSubview(nameTextField)
         nameTextField.anchor(top: containerView.topAnchor, leading: containerView.leadingAnchor, bottom: nil, trailing: containerView.trailingAnchor, padding: .init(top: 0, left: 12, bottom: 0, right: 12), size: .init(width: containerView.frame.width, height: 0))
-        nameTextField.heightAnchor.constraint(equalTo: containerView.heightAnchor, multiplier: 1/3).isActive = true
+        nameTextFieldHeightAnchor = nameTextField.heightAnchor.constraint(equalTo: containerView.heightAnchor, multiplier: 1/3)
+        nameTextFieldHeightAnchor.isActive = true
         
         containerView.addSubview(nameSeparator)
         nameSeparator.anchor(top: nameTextField.bottomAnchor, leading: containerView.leadingAnchor, bottom: nil, trailing: containerView.trailingAnchor, size: .init(width:0, height: 1))
@@ -132,23 +171,30 @@ extension LoginController {
         // add email text field
         containerView.addSubview(emailTextField)
         emailTextField.anchor(top: nameSeparator.bottomAnchor, leading: containerView.leadingAnchor, bottom: nil, trailing: containerView.trailingAnchor, padding: .init(top: 0, left: 12, bottom: 0, right: 12), size: .init(width: containerView.frame.width, height: 0))
-        emailTextField.heightAnchor.constraint(equalTo: containerView.heightAnchor, multiplier: 1/3).isActive = true
+        emailTextFieldHeightAnchor = emailTextField.heightAnchor.constraint(equalTo: containerView.heightAnchor, multiplier: 1/3)
+        emailTextFieldHeightAnchor.isActive = true
         
         containerView.addSubview(emailSeparator)
         emailSeparator.anchor(top: emailTextField.bottomAnchor, leading: containerView.leadingAnchor, bottom: nil, trailing: containerView.trailingAnchor, size: .init(width:0, height: 1))
         
-        // add password
+        // add passwords
         containerView.addSubview(passwordTextField)
         passwordTextField.anchor(top: emailSeparator.bottomAnchor, leading: containerView.leadingAnchor, bottom: nil, trailing: containerView.trailingAnchor, padding: .init(top: 0, left: 12, bottom: 0, right: 12), size: .init(width: containerView.frame.width, height: 0))
-        passwordTextField.heightAnchor.constraint(equalTo: containerView.heightAnchor, multiplier: 1/3).isActive = true
+        passwordTextFieldHeightAnchor = passwordTextField.heightAnchor.constraint(equalTo: containerView.heightAnchor, multiplier: 1/3)
+        passwordTextFieldHeightAnchor.isActive = true
         
         // add button register
         view.addSubview(loginRegisterButton)
         loginRegisterButton.anchor(top: containerView.bottomAnchor, leading: containerView.leadingAnchor, bottom: nil, trailing: containerView.trailingAnchor, padding: .init(top: 12, left: 0, bottom: 0, right: 0),size: CGSize(width: 0, height: 50))
         
+        // add segment control
+        view.addSubview(loginRegisterSegmentedControl)
+        loginRegisterSegmentedControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        loginRegisterSegmentedControl.anchor(top: nil, leading: containerView.leadingAnchor, bottom: containerView.topAnchor, trailing: containerView.trailingAnchor, padding: .init(top: 12, left: 0, bottom: 12, right: 0), size: .init(width: 0, height: 36))
+        
         // add profile image
         view.addSubview(profileImage)
         profileImage.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        profileImage.anchor(top: nil, leading: nil, bottom: containerView.topAnchor, trailing: nil, padding: .init(top: 0, left: 0, bottom: 12, right: 0), size: .init(width: 150, height: 150))
+        profileImage.anchor(top: nil, leading: nil, bottom: loginRegisterSegmentedControl.topAnchor, trailing: nil, padding: .init(top: 0, left: 0, bottom: 12, right: 0), size: .init(width: 150, height: 150))
     }
 }
