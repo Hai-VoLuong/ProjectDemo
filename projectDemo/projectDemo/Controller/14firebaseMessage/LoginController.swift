@@ -26,9 +26,29 @@ final class LoginController: UIViewController {
         b.setTitle("Register", for: .normal)
         b.setTitleColor(.white, for: .normal)
         b.titleLabel?.font = UIFont.systemFont(ofSize: 18)
-        b.addTarget(self, action: #selector(handleRegister), for: .touchUpInside)
+        b.addTarget(self, action: #selector(handleLoginRegister), for: .touchUpInside)
         return b
     }()
+    
+    @objc private func handleLoginRegister() {
+        if loginRegisterSegmentedControl.selectedSegmentIndex == 0 {
+            handleLogin()
+        } else {
+            handleRegister()
+        }
+    }
+    
+    private func handleLogin() {
+        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] (user, error) in
+            guard let this = self else { return }
+            if error != nil {
+                print(error?.localizedDescription ?? "")
+                return
+            }
+            this.dismiss(animated: true, completion: nil)
+        }
+    }
     
     @objc private func handleRegister() {
         guard let email = emailTextField.text, let password = passwordTextField.text,
