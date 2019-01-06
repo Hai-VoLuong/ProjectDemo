@@ -49,12 +49,13 @@ final class LoginController: UIViewController {
             let ref = Database.database().reference(fromURL: "https://projectdemo-aac9e.firebaseio.com/")
             let userReference = ref.child("users").child(userId)
             let values = ["name": name, "email": email]
-            userReference.updateChildValues(values) { (error, ref) in
+            userReference.updateChildValues(values) { [weak self] (error, ref) in
+                guard let this = self else { return }
                 if error != nil {
                     print(error?.localizedDescription ?? "")
                     return
                 }
-                print("Saved user succcessfully into firebase db")
+                this.dismiss(animated: true, completion: nil)
             }
         }
     }
