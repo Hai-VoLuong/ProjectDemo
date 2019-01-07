@@ -42,3 +42,14 @@ struct ChatMessage {
     let date: Date
 }
 
+// firebase message
+class User {
+    var name: String?
+    var email: String?
+    
+    init(dictionary: [String: Any]) {
+        self.name = dictionary["name"] as? String ?? ""
+        self.email = dictionary["email"] as? String ?? ""
+    }
+}
+

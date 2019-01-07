@@ -16,6 +16,7 @@ final class FirebaseMessageController: UIViewController {
         
         view.backgroundColor = .white
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "new_message_icon"), style: .plain, target: self, action: #selector(handleNewMessage))
         checkIfUserIsLoggedIn()
     }
     
@@ -43,5 +44,11 @@ final class FirebaseMessageController: UIViewController {
         
         let loginVC = LoginController()
         present(loginVC, animated: true, completion: nil)
+    }
+    
+    @objc private func handleNewMessage() {
+        let newMessageVC = NewMessageController()
+        let naviController = UINavigationController(rootViewController: newMessageVC)
+        present(naviController, animated: true, completion: nil)
     }
 }
