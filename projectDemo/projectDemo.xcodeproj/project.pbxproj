@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04221E8621E3B73D00B550FD /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04221E8521E3B73D00B550FD /* NewMessageController.swift */; };
 		042B2BF221DC710A007D125D /* StretchyHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B2BF121DC710A007D125D /* StretchyHeaderCell.swift */; };
 		0431119B21CD51D30036C7F0 /* ChainAnimationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0431119A21CD51D30036C7F0 /* ChainAnimationCell.swift */; };
 		0436704321C7DA2C00737158 /* DrapAndDropVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436704221C7DA2C00737158 /* DrapAndDropVideoController.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04221E8521E3B73D00B550FD /* NewMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
 		042B2BF121DC710A007D125D /* StretchyHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeaderCell.swift; sourceTree = "<group>"; };
 		0431119A21CD51D30036C7F0 /* ChainAnimationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainAnimationCell.swift; sourceTree = "<group>"; };
 		0436704221C7DA2C00737158 /* DrapAndDropVideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrapAndDropVideoController.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 		04C2EC3F21DFA17C0049DBD6 /* 14firebaseMessage */ = {
 			isa = PBXGroup;
 			children = (
+				04221E8521E3B73D00B550FD /* NewMessageController.swift */,
 				04C2EC4021DFA1AD0049DBD6 /* FirebaseMessageController.swift */,
 				04C2EC4221DFA9EA0049DBD6 /* LoginController.swift */,
 			);
@@ -478,6 +481,7 @@
 				9CD1C52421D1DEDD00AF412F /* StretchyController.swift in Sources */,
 				9C00318321C34FBA00110EB8 /* Generic+ServerAPI.swift in Sources */,
 				04C2EC4121DFA1AD0049DBD6 /* FirebaseMessageController.swift in Sources */,
+				04221E8621E3B73D00B550FD /* NewMessageController.swift in Sources */,
 				9C9D398421C9EC000018FBB1 /* AnimationLabel.swift in Sources */,
 				9CD1C52721D20DB200AF412F /* BarChartController.swift in Sources */,
 				9C9D398721CA24D50018FBB1 /* SwipePage.swift in Sources */,
