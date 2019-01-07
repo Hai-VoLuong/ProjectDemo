@@ -16,9 +16,20 @@ final class FirebaseMessageController: UIViewController {
         
         view.backgroundColor = .white
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
-        
+        checkIfUserIsLoggedIn()
+    }
+    
+    private func checkIfUserIsLoggedIn() {
         if Auth.auth().currentUser?.uid == nil {
             handleLogout()
+        } else {
+            let uid = Auth.auth().currentUser?.uid
+            Database.database().reference().child("users").child(uid!).observe(.value) { [weak self] (snapshot) in
+                guard let this = self else { return }
+                if let dictionary = snapshot.value as? [String: AnyObject] {
+                    this.navigationItem.title = dictionary["name"] as? String
+                }
+            }
         }
     }
     
