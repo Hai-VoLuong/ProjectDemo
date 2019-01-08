@@ -115,10 +115,12 @@ final class LoginController: UIViewController {
     }()
     
     // profile
-    private let profileImage: UIImageView = {
+   lazy var profileImageView: UIImageView = {
         let iv = UIImageView()
         iv.image = #imageLiteral(resourceName: "gameofthrones_splash")
         iv.contentMode = .scaleAspectFill
+        iv.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleSelectProfileImageView)))
+        iv.isUserInteractionEnabled = true
         return iv
     }()
     
@@ -214,8 +216,8 @@ extension LoginController {
         loginRegisterSegmentedControl.anchor(top: nil, leading: containerView.leadingAnchor, bottom: containerView.topAnchor, trailing: containerView.trailingAnchor, padding: .init(top: 12, left: 0, bottom: 12, right: 0), size: .init(width: 0, height: 36))
         
         // add profile image
-        view.addSubview(profileImage)
-        profileImage.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        profileImage.anchor(top: nil, leading: nil, bottom: loginRegisterSegmentedControl.topAnchor, trailing: nil, padding: .init(top: 0, left: 0, bottom: 12, right: 0), size: .init(width: 150, height: 150))
+        view.addSubview(profileImageView)
+        profileImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        profileImageView.anchor(top: nil, leading: nil, bottom: loginRegisterSegmentedControl.topAnchor, trailing: nil, padding: .init(top: 0, left: 0, bottom: 12, right: 0), size: .init(width: 150, height: 150))
     }
 }
