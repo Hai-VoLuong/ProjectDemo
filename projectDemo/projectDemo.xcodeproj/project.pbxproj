@@ -207,13 +207,13 @@
 		9C7B37DA21C112E6009A6C14 /* projectDemo */ = {
 			isa = PBXGroup;
 			children = (
-				048ACDDD21E0A9390068C4F3 /* projectDemo.entitlements */,
 				9C00318721C3A50F00110EB8 /* Schema */,
 				9C7B37F021C118F9009A6C14 /* Config */,
 				9C7B37EF21C118E2009A6C14 /* Helper */,
 				9C7B37F121C1194E009A6C14 /* Controller */,
 				9C7B37E721C112E7009A6C14 /* Info.plist */,
 				047A8F6321E05911008F12D6 /* GoogleService-Info.plist */,
+				048ACDDD21E0A9390068C4F3 /* projectDemo.entitlements */,
 			);
 			path = projectDemo;
 			sourceTree = "<group>";

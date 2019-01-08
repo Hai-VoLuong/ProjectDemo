@@ -50,38 +50,8 @@ final class LoginController: UIViewController {
         }
     }
     
-    @objc private func handleRegister() {
-        guard let email = emailTextField.text, let password = passwordTextField.text,
-           let name = nameTextField.text else {
-            return
-        }
-        
-        // chứng thực authentication
-        Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
-            if error != nil {
-                print(error?.localizedDescription ?? "")
-                return
-            }
-            
-            guard let userId = user?.uid else { return }
-            
-            // add firebase
-            let ref = Database.database().reference(fromURL: "https://projectdemo-aac9e.firebaseio.com/")
-            let userReference = ref.child("users").child(userId)
-            let values = ["name": name, "email": email]
-            userReference.updateChildValues(values) { [weak self] (error, ref) in
-                guard let this = self else { return }
-                if error != nil {
-                    print(error?.localizedDescription ?? "")
-                    return
-                }
-                this.dismiss(animated: true, completion: nil)
-            }
-        }
-    }
-    
     // name
-    private let nameTextField: UITextField = {
+    let nameTextField: UITextField = {
         let tf = UITextField()
         tf.placeholder = "Name"
         return tf
@@ -94,7 +64,7 @@ final class LoginController: UIViewController {
     }()
     
     // email
-    private let emailTextField: UITextField = {
+    let emailTextField: UITextField = {
         let tf = UITextField()
         tf.placeholder = "Email"
         return tf
@@ -107,7 +77,7 @@ final class LoginController: UIViewController {
     }()
     
     // password
-    private let passwordTextField: UITextField = {
+    let passwordTextField: UITextField = {
         let tf = UITextField()
         tf.placeholder = "Password"
         tf.isSecureTextEntry = true
