@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040DC79921E666FA0086CB3D /* ImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040DC79821E666FA0086CB3D /* ImageView+Extension.swift */; };
 		0413176621E4E86D00034191 /* LoginController+handles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0413176521E4E86C00034191 /* LoginController+handles.swift */; };
 		04221E8621E3B73D00B550FD /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04221E8521E3B73D00B550FD /* NewMessageController.swift */; };
 		042B2BF221DC710A007D125D /* StretchyHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B2BF121DC710A007D125D /* StretchyHeaderCell.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		040DC79821E666FA0086CB3D /* ImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+Extension.swift"; sourceTree = "<group>"; };
 		0413176521E4E86C00034191 /* LoginController+handles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginController+handles.swift"; sourceTree = "<group>"; };
 		04221E8521E3B73D00B550FD /* NewMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
 		042B2BF121DC710A007D125D /* StretchyHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeaderCell.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				04C2EC4021DFA1AD0049DBD6 /* FirebaseMessageController.swift */,
 				04C2EC4221DFA9EA0049DBD6 /* LoginController.swift */,
 				0413176521E4E86C00034191 /* LoginController+handles.swift */,
+				040DC79821E666FA0086CB3D /* ImageView+Extension.swift */,
 			);
 			path = 14firebaseMessage;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 				9C7B37EE21C117E6009A6C14 /* Extensions+UIView.swift in Sources */,
 				9CD1C52421D1DEDD00AF412F /* StretchyController.swift in Sources */,
 				9C00318321C34FBA00110EB8 /* Generic+ServerAPI.swift in Sources */,
+				040DC79921E666FA0086CB3D /* ImageView+Extension.swift in Sources */,
 				04C2EC4121DFA1AD0049DBD6 /* FirebaseMessageController.swift in Sources */,
 				04221E8621E3B73D00B550FD /* NewMessageController.swift in Sources */,
 				9C9D398421C9EC000018FBB1 /* AnimationLabel.swift in Sources */,

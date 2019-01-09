@@ -52,20 +52,7 @@ final class NewMessageCell: BaseTableCell<User> {
             descriptionLabel.text = item.email
             
             if let profileImageUrl = item.profileImageUrl {
-                let url = URL(string: profileImageUrl)
-            
-                URLSession.shared.dataTask(with: url!) { [weak self] (data, response, err) in
-                    guard let this = self else { return }
-                    if let err = err {
-                        print(err.localizedDescription)
-                        return
-                    }
-                    DispatchQueue.global(qos: .background).async {
-                        DispatchQueue.main.async {
-                            this.profileImageView.image = UIImage(data: data!)
-                        }
-                    }
-                }.resume()
+                profileImageView.loadImageUsingCacheWithUrlString(urlString: profileImageUrl)
             }
         }
     }
