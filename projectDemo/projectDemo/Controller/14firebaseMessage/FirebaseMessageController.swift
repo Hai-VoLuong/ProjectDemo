@@ -24,16 +24,20 @@ final class FirebaseMessageController: UIViewController {
         if Auth.auth().currentUser?.uid == nil {
             handleLogout()
         } else {
-            let uid = Auth.auth().currentUser?.uid
-            Database.database().reference().child("users").child(uid!).observe(.value) { [weak self] (snapshot) in
-                guard let this = self else { return }
-                if let dictionary = snapshot.value as? [String: AnyObject] {
-                    this.navigationItem.title = dictionary["name"] as? String
-                }
-            }
+            fetchUserAndSetupNaviBarTitle()
         }
     }
     
+    func fetchUserAndSetupNaviBarTitle() {
+        let uid = Auth.auth().currentUser?.uid
+        Database.database().reference().child("users").child(uid!).observe(.value) { [weak self] (snapshot) in
+            guard let this = self else { return }
+            if let dictionary = snapshot.value as? [String: AnyObject] {
+                this.navigationItem.title = dictionary["name"] as? String
+            }
+        }
+    }
+
     @objc private func handleLogout() {
         
         do {
@@ -43,6 +47,7 @@ final class FirebaseMessageController: UIViewController {
         }
         
         let loginVC = LoginController()
+        loginVC.messageController = self
         present(loginVC, animated: true, completion: nil)
     }
     
