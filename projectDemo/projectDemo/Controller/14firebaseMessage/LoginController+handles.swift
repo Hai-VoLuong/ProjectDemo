@@ -33,7 +33,9 @@ extension LoginController: UIImagePickerControllerDelegate, UINavigationControll
             let storageRef = Storage.storage().reference().child("profile_images").child("\(imageName).png")
             
             // upload image into storage firebase
-            if let uploadData = this.profileImageView.image!.pngData() {
+            if let uploadData = this.profileImageView.image?.jpegData(compressionQuality: 0.1) {
+            //if let uploadData = this.profileImageView.image!.pngData() {
+                
                 storageRef.putData(uploadData, metadata: nil ) { (_, err) in
                     if let err = error {
                         print(err.localizedDescription)
