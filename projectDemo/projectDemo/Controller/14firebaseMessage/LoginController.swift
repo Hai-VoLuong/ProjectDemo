@@ -48,6 +48,7 @@ final class LoginController: UIViewController {
                 print(error?.localizedDescription ?? "")
                 return
             }
+            this.messageController?.fetchUserAndSetupNaviBarTitle()
             this.dismiss(animated: true, completion: nil)
         }
     }

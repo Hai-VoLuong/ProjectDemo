@@ -67,7 +67,8 @@ extension LoginController: UIImagePickerControllerDelegate, UINavigationControll
                 print(err.localizedDescription)
                 return
             }
-            this.messageController?.fetchUserAndSetupNaviBarTitle()
+           // this.messageController?.fetchUserAndSetupNaviBarTitle()
+            this.messageController?.navigationItem.title = values["name"] as? String
             this.dismiss(animated: true, completion: nil)
         }
     }
