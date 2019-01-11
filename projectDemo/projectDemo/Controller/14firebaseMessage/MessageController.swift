@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-final class FirebaseMessageController: UIViewController {
+final class MessageController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,8 +78,14 @@ final class FirebaseMessageController: UIViewController {
         containerView.centerYAnchor.constraint(equalTo: titleView.centerYAnchor).isActive = true
         
         navigationItem.titleView = titleView
+        navigationController?.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showChatController)))
+        
     }
-
+    
+    @objc private func showChatController() {
+        let chatLogController = ChatLogController(collectionViewLayout: UICollectionViewLayout())
+        navigationController?.pushViewController(chatLogController, animated: true)
+    }
 
     @objc private func handleLogout() {
         

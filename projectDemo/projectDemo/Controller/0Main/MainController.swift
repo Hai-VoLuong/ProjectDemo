@@ -105,7 +105,7 @@ extension MainController {
             case .groupMessager:
                 vc = GroupMessagerController()
             case .firebaseMessage:
-                vc = FirebaseMessageController()
+                vc = MessageController()
             }
             return vc
         }

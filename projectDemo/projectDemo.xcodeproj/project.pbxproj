@@ -16,9 +16,10 @@
 		044AB9C721CE344D00190B41 /* BlurEffectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044AB9C621CE344D00190B41 /* BlurEffectController.swift */; };
 		044AB9CA21CE81AA00190B41 /* AnimationLikeFacebookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044AB9C921CE81AA00190B41 /* AnimationLikeFacebookController.swift */; };
 		047A8F6421E05911008F12D6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 047A8F6321E05911008F12D6 /* GoogleService-Info.plist */; };
+		047E212821E8237C009B7636 /* ChatLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E212721E8237C009B7636 /* ChatLogController.swift */; };
 		04967A3D21C403B100C40F09 /* SwipingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04967A3C21C403B100C40F09 /* SwipingController.swift */; };
 		04967A4021C4205400C40F09 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04967A3F21C4205400C40F09 /* MenuController.swift */; };
-		04C2EC4121DFA1AD0049DBD6 /* FirebaseMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C2EC4021DFA1AD0049DBD6 /* FirebaseMessageController.swift */; };
+		04C2EC4121DFA1AD0049DBD6 /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C2EC4021DFA1AD0049DBD6 /* MessageController.swift */; };
 		04C2EC4321DFA9EA0049DBD6 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C2EC4221DFA9EA0049DBD6 /* LoginController.swift */; };
 		04D2DC6A21C94BC10054E2EE /* LayoutStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2DC6921C94BC10054E2EE /* LayoutStackViewController.swift */; };
 		04DF2B5F21C1835E00BAA5E8 /* Generic+CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DF2B5E21C1835E00BAA5E8 /* Generic+CollectionViewController.swift */; };
@@ -54,10 +55,11 @@
 		044AB9C621CE344D00190B41 /* BlurEffectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurEffectController.swift; sourceTree = "<group>"; };
 		044AB9C921CE81AA00190B41 /* AnimationLikeFacebookController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationLikeFacebookController.swift; sourceTree = "<group>"; };
 		047A8F6321E05911008F12D6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		047E212721E8237C009B7636 /* ChatLogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogController.swift; sourceTree = "<group>"; };
 		048ACDDD21E0A9390068C4F3 /* projectDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = projectDemo.entitlements; sourceTree = "<group>"; };
 		04967A3C21C403B100C40F09 /* SwipingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingController.swift; sourceTree = "<group>"; };
 		04967A3F21C4205400C40F09 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
-		04C2EC4021DFA1AD0049DBD6 /* FirebaseMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseMessageController.swift; sourceTree = "<group>"; };
+		04C2EC4021DFA1AD0049DBD6 /* MessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
 		04C2EC4221DFA9EA0049DBD6 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		04D2DC6921C94BC10054E2EE /* LayoutStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutStackViewController.swift; sourceTree = "<group>"; };
 		04DF2B5E21C1835E00BAA5E8 /* Generic+CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Generic+CollectionViewController.swift"; sourceTree = "<group>"; };
@@ -156,10 +158,11 @@
 			isa = PBXGroup;
 			children = (
 				04221E8521E3B73D00B550FD /* NewMessageController.swift */,
-				04C2EC4021DFA1AD0049DBD6 /* FirebaseMessageController.swift */,
+				04C2EC4021DFA1AD0049DBD6 /* MessageController.swift */,
 				04C2EC4221DFA9EA0049DBD6 /* LoginController.swift */,
 				0413176521E4E86C00034191 /* LoginController+handles.swift */,
 				040DC79821E666FA0086CB3D /* ImageView+Extension.swift */,
+				047E212721E8237C009B7636 /* ChatLogController.swift */,
 			);
 			path = 14firebaseMessage;
 			sourceTree = "<group>";
@@ -488,7 +491,8 @@
 				9CD1C52421D1DEDD00AF412F /* StretchyController.swift in Sources */,
 				9C00318321C34FBA00110EB8 /* Generic+ServerAPI.swift in Sources */,
 				040DC79921E666FA0086CB3D /* ImageView+Extension.swift in Sources */,
-				04C2EC4121DFA1AD0049DBD6 /* FirebaseMessageController.swift in Sources */,
+				047E212821E8237C009B7636 /* ChatLogController.swift in Sources */,
+				04C2EC4121DFA1AD0049DBD6 /* MessageController.swift in Sources */,
 				04221E8621E3B73D00B550FD /* NewMessageController.swift in Sources */,
 				9C9D398421C9EC000018FBB1 /* AnimationLabel.swift in Sources */,
 				9CD1C52721D20DB200AF412F /* BarChartController.swift in Sources */,
