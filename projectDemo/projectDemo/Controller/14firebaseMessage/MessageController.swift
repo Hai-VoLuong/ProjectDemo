@@ -24,7 +24,6 @@ final class MessageCell: BaseTableCell<Message> {
     
     private let profileImageView: UIImageView = {
         let iv = UIImageView()
-        iv.image = #imageLiteral(resourceName: "course_banner")
         iv.layer.cornerRadius = 25
         iv.clipsToBounds = true
         return iv
@@ -86,6 +85,9 @@ final class MessageCell: BaseTableCell<Message> {
 
 final class MessageController: BaseTableView<MessageCell, Message> {
     
+    // group message
+    var messagesDictionary = [String: Message]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -102,7 +104,15 @@ final class MessageController: BaseTableView<MessageCell, Message> {
             guard let this = self else { return }
             if let dictionary = snapshot.value as? [String: AnyObject] {
                 let message = Message(dictionary: dictionary)
-                this.items.append(message)
+                if let toId = message.toId {
+                    this.messagesDictionary[toId] = message
+                    this.items = Array(this.messagesDictionary.values)
+                    
+                    // sort theo time stamp
+                    this.items.sorted { (message1, message2) -> Bool in
+                        return message1.timeStamp!.intValue > message2.timeStamp!.intValue
+                    }
+                }
                 DispatchQueue.main.async {
                     this.tableView.reloadData()
                 }
