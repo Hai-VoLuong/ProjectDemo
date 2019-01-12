@@ -9,7 +9,18 @@
 import UIKit
 import Firebase
 
-final class MessageController: UIViewController {
+final class MessageCell: BaseTableCell<Message> {
+    
+    override var item: Message! {
+        didSet {
+            textLabel?.text = item.text
+        }
+    }
+}
+
+final class MessageController: BaseTableView<MessageCell, Message> {
+    
+    //var message = Message()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +29,21 @@ final class MessageController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "new_message_icon"), style: .plain, target: self, action: #selector(handleNewMessage))
         checkIfUserIsLoggedIn()
+        observeMessages()
+    }
+    
+    private func observeMessages() {
+        let ref = Database.database().reference().child("messages")
+        ref.observe(.childAdded, with: { [weak self] (snapshot) in
+            guard let this = self else { return }
+            if let dictionary = snapshot.value as? [String: AnyObject] {
+                let message = Message(dictionary: dictionary)
+                this.items.append(message)
+                DispatchQueue.main.async {
+                    this.tableView.reloadData()
+                }
+            }
+        }, withCancel: nil)
     }
     
     private func checkIfUserIsLoggedIn() {

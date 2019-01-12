@@ -57,3 +57,17 @@ class User {
     }
 }
 
+class Message {
+    let fromId: String?
+    let text: String?
+    let timeStamp: Int?
+    let toId: String?
+    
+    init(dictionary: [String: Any]) {
+        self.fromId = dictionary["fromId"] as? String ?? ""
+        self.text = dictionary["text"] as? String ?? ""
+        self.timeStamp = dictionary["timeStamp"] as? Int ?? 0
+        self.toId = dictionary["toId"] as? String ?? ""
+    }
+}
+
