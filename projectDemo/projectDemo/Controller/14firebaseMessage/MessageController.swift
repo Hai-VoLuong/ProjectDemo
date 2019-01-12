@@ -57,7 +57,7 @@ final class MessageCell: BaseTableCell<Message> {
 
     override var item: Message! {
         didSet {
-            if let toId = item.toId {
+            if let toId = item.chatParterId() {
                 let ref = Database.database().reference().child("users").child(toId)
                 ref.observe(.value) { [weak self] (snapshot) in
                     guard let this = self else { return }
@@ -95,7 +95,37 @@ final class MessageController: BaseTableView<MessageCell, Message> {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "new_message_icon"), style: .plain, target: self, action: #selector(handleNewMessage))
         checkIfUserIsLoggedIn()
-        observeMessages()
+        //observeMessages()
+    }
+    
+    private func observeUserMessages() {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let ref = Database.database().reference().child("user-messages").child(uid)
+        ref.observe(.childAdded, with: { (snapshot) in
+            
+            // get table message from table user_messages
+            let messageId = snapshot.key
+            let messagesRef = Database.database().reference().child("messages").child(messageId)
+            
+            messagesRef.observeSingleEvent(of: .value, with: { [weak self] (snapshot) in
+                guard let this = self else { return }
+                if let dictionary = snapshot.value as? [String: AnyObject] {
+                    let message = Message(dictionary: dictionary)
+                    if let toId = message.toId {
+                        this.messagesDictionary[toId] = message
+                        this.items = Array(this.messagesDictionary.values)
+                        
+                        // sort theo time stamp
+                        this.items.sorted { (message1, message2) -> Bool in
+                            return message1.timeStamp!.intValue > message2.timeStamp!.intValue
+                        }
+                    }
+                    DispatchQueue.main.async {
+                        this.tableView.reloadData()
+                    }
+                }
+            }, withCancel: nil)
+        }, withCancel: nil)
     }
     
     private func observeMessages() {
@@ -140,6 +170,10 @@ final class MessageController: BaseTableView<MessageCell, Message> {
     }
     
     func setupNavBarWithUser(_ user: User) {
+        messagesDictionary.removeAll()
+        tableView.reloadData()
+        observeUserMessages()
+        
         let titleView = UIView()
         titleView.frame = CGRect(x: 0, y: 0, width: 100, height: 40)
     

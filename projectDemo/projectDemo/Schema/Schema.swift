@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 final class Schema { }
 
@@ -68,6 +69,10 @@ class Message {
         self.text = dictionary["text"] as? String ?? ""
         self.timeStamp = dictionary["timeStamp"] as? NSNumber ?? 0
         self.toId = dictionary["toId"] as? String ?? ""
+    }
+    
+    func chatParterId() -> String? {
+        return fromId == Auth.auth().currentUser?.uid ? toId : fromId
     }
 }
 
