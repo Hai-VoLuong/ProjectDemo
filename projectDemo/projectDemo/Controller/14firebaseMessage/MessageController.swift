@@ -29,7 +29,15 @@ final class MessageCell: BaseTableCell<Message> {
         iv.clipsToBounds = true
         return iv
     }()
-
+    
+    private let timeLabel: UILabel = {
+        let l = UILabel()
+        l.font = UIFont.systemFont(ofSize: 13)
+        l.textColor = .darkGray
+        l.text = "HH:MM:SS"
+        return l
+    }()
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -39,11 +47,12 @@ final class MessageCell: BaseTableCell<Message> {
         
         addSubview(titleLabel)
         titleLabel.anchor(top: topAnchor, leading: profileImageView.trailingAnchor, bottom: nil, trailing: nil, padding: .init(top: 8, left: 8, bottom: 0, right: 0), size: .init(width: titleLabel.frame.width, height: titleLabel.frame.height))
-        //titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         
         addSubview(descriptionLabel)
         descriptionLabel.anchor(top: titleLabel.bottomAnchor, leading: profileImageView.trailingAnchor, bottom: nil, trailing: nil, padding: .init(top: 0, left: 8, bottom: 0, right: 0), size: .init(width: descriptionLabel.frame.width, height: descriptionLabel.frame.height))
         
+        addSubview(timeLabel)
+        timeLabel.anchor(top: topAnchor, leading: nil, bottom: nil, trailing: trailingAnchor, padding: .init(top: 8, left: 8, bottom: 0, right: 0), size: .init(width: 100, height: titleLabel.frame.height))
     }
 
 
@@ -62,7 +71,14 @@ final class MessageCell: BaseTableCell<Message> {
                     }
                 }
             }
-            
+
+            if let seconds = item.timeStamp?.doubleValue {
+                let timeStampDate = Date(timeIntervalSince1970: seconds)
+                
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "hh:mm:ss a"
+                timeLabel.text = dateFormatter.string(from: timeStampDate as Date)
+            }
             descriptionLabel.text = item.text
         }
     }
