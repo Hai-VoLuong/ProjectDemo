@@ -83,8 +83,23 @@ extension ChatLogController: UITextFieldDelegate {
                      "fromId": fromId,
                      "timeStamp": timeStamp] as [String : Any]
         
-        // add value to database
-        childRef.updateChildValues(value)
+        // create tabel user-messages
+        childRef.updateChildValues(value) { (err, ref) in
+            if let err = err {
+                print(err.localizedDescription)
+                return
+            }
+            // get userId người gởi add into table user-messages
+            let userMessageRef = Database.database().reference().child("user-messages").child(fromId)
+            
+            //get messageId add into table user-messages
+            let messageId = childRef.key
+            userMessageRef.updateChildValues([messageId: 1])
+            
+            // get userId người nhận add into table-messages
+            let recipientUserMessageRef = Database.database().reference().child("user-messages").child(toId)
+            recipientUserMessageRef.updateChildValues([messageId: 1])
+        }
     }
     
     // fix when nhấn enter thì add value vào database
