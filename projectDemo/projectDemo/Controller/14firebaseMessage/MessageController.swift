@@ -78,12 +78,13 @@ final class MessageController: UIViewController {
         containerView.centerYAnchor.constraint(equalTo: titleView.centerYAnchor).isActive = true
         
         navigationItem.titleView = titleView
-        navigationController?.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showChatController)))
+//        navigationController?.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showChatController(user:))))
         
     }
     
-    @objc private func showChatController() {
+    func showChatController(user: User) {
         let chatLogController = ChatLogController(collectionViewLayout: UICollectionViewLayout())
+        chatLogController.user = user
         navigationController?.pushViewController(chatLogController, animated: true)
     }
 
@@ -102,6 +103,7 @@ final class MessageController: UIViewController {
     
     @objc private func handleNewMessage() {
         let newMessageVC = NewMessageController()
+        newMessageVC.messageController = self
         let naviController = UINavigationController(rootViewController: newMessageVC)
         present(naviController, animated: true, completion: nil)
     }

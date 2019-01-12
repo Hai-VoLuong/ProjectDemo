@@ -11,6 +11,12 @@ import Firebase
 
 final class ChatLogController: UICollectionViewController {
     
+    var user: User? {
+        didSet {
+            navigationItem.title = user?.name
+        }
+    }
+    
     private let containerView: UIView = {
         let v = UIView()
         v.backgroundColor = .white
@@ -39,7 +45,6 @@ final class ChatLogController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Chat Log Controller"
         collectionView.backgroundColor = .white
         setupInputComponents()
     }
