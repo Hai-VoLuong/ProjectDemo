@@ -11,16 +11,82 @@ import Firebase
 
 final class MessageCell: BaseTableCell<Message> {
     
+    private let titleLabel: UILabel = {
+        let l = UILabel()
+        return l
+    }()
+    
+    private let descriptionLabel: UILabel = {
+        let l = UILabel()
+        l.font = UIFont.systemFont(ofSize: 12)
+        return l
+    }()
+    
+    private let profileImageView: UIImageView = {
+        let iv = UIImageView()
+        iv.layer.cornerRadius = 25
+        iv.clipsToBounds = true
+        return iv
+    }()
+    
+    private let timeLabel: UILabel = {
+        let l = UILabel()
+        l.font = UIFont.systemFont(ofSize: 13)
+        l.textColor = .darkGray
+        l.text = "HH:MM:SS"
+        return l
+    }()
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        addSubview(profileImageView)
+        profileImageView.anchor(top: nil, leading: leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 0, left: 8, bottom: 0, right: 0), size: .init(width: 50, height: 50))
+        profileImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        
+        addSubview(titleLabel)
+        titleLabel.anchor(top: topAnchor, leading: profileImageView.trailingAnchor, bottom: nil, trailing: nil, padding: .init(top: 8, left: 8, bottom: 0, right: 0), size: .init(width: titleLabel.frame.width, height: titleLabel.frame.height))
+        
+        addSubview(descriptionLabel)
+        descriptionLabel.anchor(top: titleLabel.bottomAnchor, leading: profileImageView.trailingAnchor, bottom: nil, trailing: nil, padding: .init(top: 0, left: 8, bottom: 0, right: 0), size: .init(width: descriptionLabel.frame.width, height: descriptionLabel.frame.height))
+        
+        addSubview(timeLabel)
+        timeLabel.anchor(top: topAnchor, leading: nil, bottom: nil, trailing: trailingAnchor, padding: .init(top: 8, left: 8, bottom: 0, right: 0), size: .init(width: 100, height: titleLabel.frame.height))
+    }
+
+
     override var item: Message! {
         didSet {
-            textLabel?.text = item.text
+            if let toId = item.toId {
+                let ref = Database.database().reference().child("users").child(toId)
+                ref.observe(.value) { [weak self] (snapshot) in
+                    guard let this = self else { return }
+                    if let dictionary = snapshot.value as? [String: AnyObject] {
+                        this.titleLabel.text = dictionary["name"] as? String
+                    
+                        if let profileImageUrl = dictionary["profileImageUrl"] as? String {
+                            this.profileImageView.loadImageUsingCacheWithUrlString(urlString: profileImageUrl)
+                        }
+                    }
+                }
+            }
+
+            if let seconds = item.timeStamp?.doubleValue {
+                let timeStampDate = Date(timeIntervalSince1970: seconds)
+                
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "hh:mm:ss a"
+                timeLabel.text = dateFormatter.string(from: timeStampDate as Date)
+            }
+            descriptionLabel.text = item.text
         }
     }
 }
 
 final class MessageController: BaseTableView<MessageCell, Message> {
     
-    //var message = Message()
+    // group message
+    var messagesDictionary = [String: Message]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +104,15 @@ final class MessageController: BaseTableView<MessageCell, Message> {
             guard let this = self else { return }
             if let dictionary = snapshot.value as? [String: AnyObject] {
                 let message = Message(dictionary: dictionary)
-                this.items.append(message)
+                if let toId = message.toId {
+                    this.messagesDictionary[toId] = message
+                    this.items = Array(this.messagesDictionary.values)
+                    
+                    // sort theo time stamp
+                    this.items.sorted { (message1, message2) -> Bool in
+                        return message1.timeStamp!.intValue > message2.timeStamp!.intValue
+                    }
+                }
                 DispatchQueue.main.async {
                     this.tableView.reloadData()
                 }
@@ -132,5 +206,9 @@ final class MessageController: BaseTableView<MessageCell, Message> {
         newMessageVC.messageController = self
         let naviController = UINavigationController(rootViewController: newMessageVC)
         present(naviController, animated: true, completion: nil)
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
     }
 }
