@@ -74,7 +74,8 @@ extension ChatLogController: UITextFieldDelegate {
         let ref = Database.database().reference().child("messages")
         // create list key on datebase
         let childRef = ref.childByAutoId()
-        let value = ["text": inputTextField.text!, "name": "Bran Stark"]
+        let toId = user!.id!
+        let value = ["text": inputTextField.text!, "toId": toId]
         
         // add value to database
         childRef.updateChildValues(value)

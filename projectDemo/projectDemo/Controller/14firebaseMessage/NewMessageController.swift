@@ -72,6 +72,7 @@ final class NewMessageController: BaseTableView<NewMessageCell, User> {
             guard let this = self else { return }
             if let dictionary = snapshot.value as? [String: AnyObject] {
                 let user = User(dictionary: dictionary)
+                user.id = snapshot.key
                 this.items.append(user)
                 DispatchQueue.main.async {
                     this.tableView.reloadData()
