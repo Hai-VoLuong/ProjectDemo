@@ -72,6 +72,7 @@ final class NewMessageController: BaseTableView<NewMessageCell, User> {
             guard let this = self else { return }
             if let dictionary = snapshot.value as? [String: AnyObject] {
                 let user = User(dictionary: dictionary)
+                user.id = snapshot.key
                 this.items.append(user)
                 DispatchQueue.main.async {
                     this.tableView.reloadData()
@@ -86,5 +87,15 @@ final class NewMessageController: BaseTableView<NewMessageCell, User> {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
+    }
+    
+    var messageController: MessageController?
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        dismiss(animated: true) { [weak self] in
+            guard let this = self else { return }
+            let user = this.items[indexPath.row]
+            this.messageController?.showChatController(user: user)
+        }
     }
 }
