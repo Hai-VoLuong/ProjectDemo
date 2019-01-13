@@ -95,7 +95,74 @@ final class MessageController: BaseTableView<MessageCell, Message> {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "new_message_icon"), style: .plain, target: self, action: #selector(handleNewMessage))
         checkIfUserIsLoggedIn()
-        //observeMessages()
+    }
+    
+    @objc private func handleLogout() {
+        
+        do {
+            try Auth.auth().signOut()
+        } catch let logoutError {
+            print(logoutError)
+        }
+        
+        let loginVC = LoginController()
+        loginVC.messageController = self
+        present(loginVC, animated: true, completion: nil)
+    }
+    
+    func showChatController(user: User) {
+        let chatLogController = ChatLogController(collectionViewLayout: UICollectionViewFlowLayout())
+        chatLogController.user = user
+        navigationController?.pushViewController(chatLogController, animated: true)
+    }
+
+    @objc private func handleNewMessage() {
+        let newMessageVC = NewMessageController()
+        newMessageVC.messageController = self
+        let naviController = UINavigationController(rootViewController: newMessageVC)
+        present(naviController, animated: true, completion: nil)
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let message = items[indexPath.row]
+        
+        guard let chatPartnerId = message.chatParterId() else { return }
+        let ref = Database.database().reference().child("users").child(chatPartnerId)
+        ref.observe(.value, with: { [weak self] (snapshot) in
+            guard let this = self else { return }
+            guard let dictionary = snapshot.value as? [String: AnyObject] else { return }
+            let user = User(dictionary: dictionary)
+            user.id = chatPartnerId
+            this.showChatController(user: user)
+            
+        }, withCancel: nil)
+    }
+}
+
+// Func
+extension MessageController {
+    
+    private func checkIfUserIsLoggedIn() {
+        if Auth.auth().currentUser?.uid == nil {
+            handleLogout()
+        } else {
+            fetchUserAndSetupNaviBarTitle()
+        }
+    }
+    
+    func fetchUserAndSetupNaviBarTitle() {
+        let uid = Auth.auth().currentUser?.uid
+        Database.database().reference().child("users").child(uid!).observe(.value) { [weak self] (snapshot) in
+            guard let this = self else { return }
+            if let dictionary = snapshot.value as? [String: AnyObject] {
+                let user = User(dictionary: dictionary)
+                this.setupNavBarWithUser(user)
+            }
+        }
     }
     
     private func observeUserMessages() {
@@ -124,49 +191,8 @@ final class MessageController: BaseTableView<MessageCell, Message> {
                         this.tableView.reloadData()
                     }
                 }
-            }, withCancel: nil)
+                }, withCancel: nil)
         }, withCancel: nil)
-    }
-    
-    private func observeMessages() {
-        let ref = Database.database().reference().child("messages")
-        ref.observe(.childAdded, with: { [weak self] (snapshot) in
-            guard let this = self else { return }
-            if let dictionary = snapshot.value as? [String: AnyObject] {
-                let message = Message(dictionary: dictionary)
-                if let toId = message.toId {
-                    this.messagesDictionary[toId] = message
-                    this.items = Array(this.messagesDictionary.values)
-                    
-                    // sort theo time stamp
-                    this.items.sorted { (message1, message2) -> Bool in
-                        return message1.timeStamp!.intValue > message2.timeStamp!.intValue
-                    }
-                }
-                DispatchQueue.main.async {
-                    this.tableView.reloadData()
-                }
-            }
-        }, withCancel: nil)
-    }
-    
-    private func checkIfUserIsLoggedIn() {
-        if Auth.auth().currentUser?.uid == nil {
-            handleLogout()
-        } else {
-            fetchUserAndSetupNaviBarTitle()
-        }
-    }
-    
-    func fetchUserAndSetupNaviBarTitle() {
-        let uid = Auth.auth().currentUser?.uid
-        Database.database().reference().child("users").child(uid!).observe(.value) { [weak self] (snapshot) in
-            guard let this = self else { return }
-            if let dictionary = snapshot.value as? [String: AnyObject] {
-                let user = User(dictionary: dictionary)
-                this.setupNavBarWithUser(user)
-            }
-        }
     }
     
     func setupNavBarWithUser(_ user: User) {
@@ -176,7 +202,7 @@ final class MessageController: BaseTableView<MessageCell, Message> {
         
         let titleView = UIView()
         titleView.frame = CGRect(x: 0, y: 0, width: 100, height: 40)
-    
+        
         let containerView = UIView()
         containerView.translatesAutoresizingMaskIntoConstraints = false
         titleView.addSubview(containerView)
@@ -212,37 +238,5 @@ final class MessageController: BaseTableView<MessageCell, Message> {
         containerView.centerYAnchor.constraint(equalTo: titleView.centerYAnchor).isActive = true
         
         navigationItem.titleView = titleView
-//        navigationController?.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showChatController(user:))))
-        
-    }
-    
-    func showChatController(user: User) {
-        let chatLogController = ChatLogController(collectionViewLayout: UICollectionViewLayout())
-        chatLogController.user = user
-        navigationController?.pushViewController(chatLogController, animated: true)
-    }
-
-    @objc private func handleLogout() {
-        
-        do {
-            try Auth.auth().signOut()
-        } catch let logoutError {
-            print(logoutError)
-        }
-        
-        let loginVC = LoginController()
-        loginVC.messageController = self
-        present(loginVC, animated: true, completion: nil)
-    }
-    
-    @objc private func handleNewMessage() {
-        let newMessageVC = NewMessageController()
-        newMessageVC.messageController = self
-        let naviController = UINavigationController(rootViewController: newMessageVC)
-        present(naviController, animated: true, completion: nil)
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
     }
 }
