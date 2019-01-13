@@ -111,7 +111,7 @@ final class MessageController: BaseTableView<MessageCell, Message> {
     }
     
     func showChatController(user: User) {
-        let chatLogController = ChatLogController(collectionViewLayout: UICollectionViewLayout())
+        let chatLogController = ChatLogController(collectionViewLayout: UICollectionViewFlowLayout())
         chatLogController.user = user
         navigationController?.pushViewController(chatLogController, animated: true)
     }
@@ -125,6 +125,21 @@ final class MessageController: BaseTableView<MessageCell, Message> {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let message = items[indexPath.row]
+        
+        guard let chatPartnerId = message.chatParterId() else { return }
+        let ref = Database.database().reference().child("users").child(chatPartnerId)
+        ref.observe(.value, with: { [weak self] (snapshot) in
+            guard let this = self else { return }
+            guard let dictionary = snapshot.value as? [String: AnyObject] else { return }
+            let user = User(dictionary: dictionary)
+            user.id = chatPartnerId
+            this.showChatController(user: user)
+            
+        }, withCancel: nil)
     }
 }
 
