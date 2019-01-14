@@ -75,4 +75,11 @@ extension UIView {
         widthAnchor.constraint(equalToConstant: size.width).isActive = true
         heightAnchor.constraint(equalToConstant: size.height).isActive = true
     }
+    
+    // estimate frame for text
+    func estimateFrameForText(text: String) -> CGRect {
+        let size = CGSize(width: 200, height: 1000)
+        let option = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
+        return NSString(string: text).boundingRect(with: size, options: option, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16)], context: nil)
+    }
 }
