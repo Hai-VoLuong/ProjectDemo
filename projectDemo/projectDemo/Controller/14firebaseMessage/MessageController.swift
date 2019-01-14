@@ -178,8 +178,8 @@ extension MessageController {
                 guard let this = self else { return }
                 if let dictionary = snapshot.value as? [String: AnyObject] {
                     let message = Message(dictionary: dictionary)
-                    if let toId = message.toId {
-                        this.messagesDictionary[toId] = message
+                    if let chatParterId = message.chatParterId() {
+                        this.messagesDictionary[chatParterId] = message
                         this.items = Array(this.messagesDictionary.values)
                         
                         // sort theo time stamp
