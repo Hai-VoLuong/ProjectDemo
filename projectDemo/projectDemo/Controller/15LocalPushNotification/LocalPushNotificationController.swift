@@ -27,8 +27,8 @@ final class LocalPushNotificationController: UIViewController {
     /// UNLocationNotificationTrigger Trigger địa điểm. Khi user đến một địa điểm nào đó thì sẽ có thông báo.
     private func testReceiveLocalNotification() {
         let content = UNMutableNotificationContent()
-        content.title = "Đây là cái title"
-        content.body = "Đây là cái nội dung."
+        content.title = "Hi Title"
+        content.body = "Hải đây :D"
         content.sound = UNNotificationSound.default
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         

@@ -26,7 +26,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         window?.makeKeyAndVisible()
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        window?.rootViewController = UINavigationController(rootViewController: MainController())
+        
+        if (launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] != nil) {
+            window?.rootViewController = UINavigationController(rootViewController: LocalPushNotificationController())
+            
+        } else {
+            window?.rootViewController = UINavigationController(rootViewController: MainController())
+        }
+
         return true
     }
     

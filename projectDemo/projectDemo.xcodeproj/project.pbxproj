@@ -13,6 +13,43 @@
 		042B2BF221DC710A007D125D /* StretchyHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B2BF121DC710A007D125D /* StretchyHeaderCell.swift */; };
 		0431119B21CD51D30036C7F0 /* ChainAnimationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0431119A21CD51D30036C7F0 /* ChainAnimationCell.swift */; };
 		0436704321C7DA2C00737158 /* DrapAndDropVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436704221C7DA2C00737158 /* DrapAndDropVideoController.swift */; };
+		0444FD3021FCAE0A0057CF45 /* BlurEffectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044AB9C621CE344D00190B41 /* BlurEffectController.swift */; };
+		0444FD3121FCAE0A0057CF45 /* Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C00318821C3A52800110EB8 /* Schema.swift */; };
+		0444FD3221FCAE0A0057CF45 /* LoginController+handles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0413176521E4E86C00034191 /* LoginController+handles.swift */; };
+		0444FD3321FCAE0A0057CF45 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B37DD21C112E6009A6C14 /* MainController.swift */; };
+		0444FD3421FCAE0A0057CF45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B37DB21C112E6009A6C14 /* AppDelegate.swift */; };
+		0444FD3521FCAE0A0057CF45 /* SwipingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04967A3C21C403B100C40F09 /* SwipingController.swift */; };
+		0444FD3621FCAE0A0057CF45 /* AnimationLikeFacebookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044AB9C921CE81AA00190B41 /* AnimationLikeFacebookController.swift */; };
+		0444FD3721FCAE0A0057CF45 /* Generic+CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DF2B5E21C1835E00BAA5E8 /* Generic+CollectionViewController.swift */; };
+		0444FD3821FCAE0A0057CF45 /* SwipePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D398821CA553E0018FBB1 /* SwipePageController.swift */; };
+		0444FD3921FCAE0A0057CF45 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04967A3F21C4205400C40F09 /* MenuController.swift */; };
+		0444FD3A21FCAE0A0057CF45 /* DrapAndDropVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436704221C7DA2C00737158 /* DrapAndDropVideoController.swift */; };
+		0444FD3B21FCAE0A0057CF45 /* StretchyHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B2BF121DC710A007D125D /* StretchyHeaderCell.swift */; };
+		0444FD3C21FCAE0A0057CF45 /* ShimmerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC7518421C8F6EA0013BF5E /* ShimmerController.swift */; };
+		0444FD3D21FCAE0A0057CF45 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C2EC4221DFA9EA0049DBD6 /* LoginController.swift */; };
+		0444FD3E21FCAE0A0057CF45 /* LocalPushNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F47C6221FC81D80078A6B1 /* LocalPushNotificationController.swift */; };
+		0444FD3F21FCAE0A0057CF45 /* Generic+TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B37F221C119C4009A6C14 /* Generic+TableViewController.swift */; };
+		0444FD4021FCAE0A0057CF45 /* ChainAnimationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0431119A21CD51D30036C7F0 /* ChainAnimationCell.swift */; };
+		0444FD4121FCAE0A0057CF45 /* NewItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCF28D121C79F10006C3F83 /* NewItemController.swift */; };
+		0444FD4221FCAE0A0057CF45 /* LayoutStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2DC6921C94BC10054E2EE /* LayoutStackViewController.swift */; };
+		0444FD4321FCAE0A0057CF45 /* HomeFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B37F421C11C2B009A6C14 /* HomeFeedController.swift */; };
+		0444FD4421FCAE0A0057CF45 /* ChainAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1D44321CB915D00BA2C8E /* ChainAnimationController.swift */; };
+		0444FD4521FCAE0A0057CF45 /* DetailHomeFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C00318A21C3AA6700110EB8 /* DetailHomeFeedController.swift */; };
+		0444FD4621FCAE0A0057CF45 /* GroupMessagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD1C52C21D23D6000AF412F /* GroupMessagerController.swift */; };
+		0444FD4721FCAE0A0057CF45 /* StretchyHeaderLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4AA2C321D46FC000E035CE /* StretchyHeaderLayout.swift */; };
+		0444FD4821FCAE0A0057CF45 /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B37ED21C117E6009A6C14 /* Extensions+UIView.swift */; };
+		0444FD4921FCAE0A0057CF45 /* StretchyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD1C52321D1DEDD00AF412F /* StretchyController.swift */; };
+		0444FD4A21FCAE0A0057CF45 /* Generic+ServerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C00318221C34FBA00110EB8 /* Generic+ServerAPI.swift */; };
+		0444FD4B21FCAE0A0057CF45 /* ImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040DC79821E666FA0086CB3D /* ImageView+Extension.swift */; };
+		0444FD4C21FCAE0A0057CF45 /* ChatLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E212721E8237C009B7636 /* ChatLogController.swift */; };
+		0444FD4D21FCAE0A0057CF45 /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C2EC4021DFA1AD0049DBD6 /* MessageController.swift */; };
+		0444FD4E21FCAE0A0057CF45 /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04221E8521E3B73D00B550FD /* NewMessageController.swift */; };
+		0444FD4F21FCAE0A0057CF45 /* AnimationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D398321C9EBFF0018FBB1 /* AnimationLabel.swift */; };
+		0444FD5021FCAE0A0057CF45 /* BarChartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD1C52621D20DB200AF412F /* BarChartController.swift */; };
+		0444FD5121FCAE0A0057CF45 /* SwipePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D398621CA24D50018FBB1 /* SwipePage.swift */; };
+		0444FD5321FCAE0A0057CF45 /* Pods_projectDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1FC07F3472D5E7381AA01D3 /* Pods_projectDemo.framework */; };
+		0444FD5521FCAE0A0057CF45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C7B37E221C112E7009A6C14 /* Assets.xcassets */; };
+		0444FD5621FCAE0A0057CF45 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 047A8F6321E05911008F12D6 /* GoogleService-Info.plist */; };
 		044AB9C721CE344D00190B41 /* BlurEffectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044AB9C621CE344D00190B41 /* BlurEffectController.swift */; };
 		044AB9CA21CE81AA00190B41 /* AnimationLikeFacebookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044AB9C921CE81AA00190B41 /* AnimationLikeFacebookController.swift */; };
 		047A8F6421E05911008F12D6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 047A8F6321E05911008F12D6 /* GoogleService-Info.plist */; };
@@ -53,6 +90,8 @@
 		042B2BF121DC710A007D125D /* StretchyHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeaderCell.swift; sourceTree = "<group>"; };
 		0431119A21CD51D30036C7F0 /* ChainAnimationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainAnimationCell.swift; sourceTree = "<group>"; };
 		0436704221C7DA2C00737158 /* DrapAndDropVideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrapAndDropVideoController.swift; sourceTree = "<group>"; };
+		0444FD5B21FCAE0A0057CF45 /* projectDemo dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "projectDemo dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0444FD5C21FCAE0B0057CF45 /* projectDemo copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "projectDemo copy-Info.plist"; path = "/Users/mac/Documents/AppGitHup/appProjectDemo/projectDemo/projectDemo copy-Info.plist"; sourceTree = "<absolute>"; };
 		044AB9C621CE344D00190B41 /* BlurEffectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurEffectController.swift; sourceTree = "<group>"; };
 		044AB9C921CE81AA00190B41 /* AnimationLikeFacebookController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationLikeFacebookController.swift; sourceTree = "<group>"; };
 		047A8F6321E05911008F12D6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -92,6 +131,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0444FD5221FCAE0A0057CF45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0444FD5321FCAE0A0057CF45 /* Pods_projectDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9C7B37D521C112E6009A6C14 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -209,6 +256,7 @@
 				9C7B37D921C112E6009A6C14 /* Products */,
 				88332265E45DDD779922E7A2 /* Pods */,
 				F2299DA8032986FB65205F6B /* Frameworks */,
+				0444FD5C21FCAE0B0057CF45 /* projectDemo copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -216,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				9C7B37D821C112E6009A6C14 /* projectDemo.app */,
+				0444FD5B21FCAE0A0057CF45 /* projectDemo dev.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -348,6 +397,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0444FD2D21FCAE0A0057CF45 /* projectDemo dev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0444FD5821FCAE0A0057CF45 /* Build configuration list for PBXNativeTarget "projectDemo dev" */;
+			buildPhases = (
+				0444FD2E21FCAE0A0057CF45 /* [CP] Check Pods Manifest.lock */,
+				0444FD2F21FCAE0A0057CF45 /* Sources */,
+				0444FD5221FCAE0A0057CF45 /* Frameworks */,
+				0444FD5421FCAE0A0057CF45 /* Resources */,
+				0444FD5721FCAE0A0057CF45 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "projectDemo dev";
+			productName = projectDemo;
+			productReference = 0444FD5B21FCAE0A0057CF45 /* projectDemo dev.app */;
+			productType = "com.apple.product-type.application";
+		};
 		9C7B37D721C112E6009A6C14 /* projectDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9C7B37EA21C112E7009A6C14 /* Build configuration list for PBXNativeTarget "projectDemo" */;
@@ -383,6 +451,9 @@
 							com.apple.Keychain = {
 								enabled = 0;
 							};
+							com.apple.Push = {
+								enabled = 0;
+							};
 						};
 					};
 				};
@@ -401,11 +472,21 @@
 			projectRoot = "";
 			targets = (
 				9C7B37D721C112E6009A6C14 /* projectDemo */,
+				0444FD2D21FCAE0A0057CF45 /* projectDemo dev */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0444FD5421FCAE0A0057CF45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0444FD5521FCAE0A0057CF45 /* Assets.xcassets in Resources */,
+				0444FD5621FCAE0A0057CF45 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9C7B37D621C112E6009A6C14 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -418,6 +499,56 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0444FD2E21FCAE0A0057CF45 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-projectDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0444FD5721FCAE0A0057CF45 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-projectDemo/Pods-projectDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-projectDemo/Pods-projectDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		693C6C03E5A40B4595800964 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -471,6 +602,47 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0444FD2F21FCAE0A0057CF45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0444FD3021FCAE0A0057CF45 /* BlurEffectController.swift in Sources */,
+				0444FD3121FCAE0A0057CF45 /* Schema.swift in Sources */,
+				0444FD3221FCAE0A0057CF45 /* LoginController+handles.swift in Sources */,
+				0444FD3321FCAE0A0057CF45 /* MainController.swift in Sources */,
+				0444FD3421FCAE0A0057CF45 /* AppDelegate.swift in Sources */,
+				0444FD3521FCAE0A0057CF45 /* SwipingController.swift in Sources */,
+				0444FD3621FCAE0A0057CF45 /* AnimationLikeFacebookController.swift in Sources */,
+				0444FD3721FCAE0A0057CF45 /* Generic+CollectionViewController.swift in Sources */,
+				0444FD3821FCAE0A0057CF45 /* SwipePageController.swift in Sources */,
+				0444FD3921FCAE0A0057CF45 /* MenuController.swift in Sources */,
+				0444FD3A21FCAE0A0057CF45 /* DrapAndDropVideoController.swift in Sources */,
+				0444FD3B21FCAE0A0057CF45 /* StretchyHeaderCell.swift in Sources */,
+				0444FD3C21FCAE0A0057CF45 /* ShimmerController.swift in Sources */,
+				0444FD3D21FCAE0A0057CF45 /* LoginController.swift in Sources */,
+				0444FD3E21FCAE0A0057CF45 /* LocalPushNotificationController.swift in Sources */,
+				0444FD3F21FCAE0A0057CF45 /* Generic+TableViewController.swift in Sources */,
+				0444FD4021FCAE0A0057CF45 /* ChainAnimationCell.swift in Sources */,
+				0444FD4121FCAE0A0057CF45 /* NewItemController.swift in Sources */,
+				0444FD4221FCAE0A0057CF45 /* LayoutStackViewController.swift in Sources */,
+				0444FD4321FCAE0A0057CF45 /* HomeFeedController.swift in Sources */,
+				0444FD4421FCAE0A0057CF45 /* ChainAnimationController.swift in Sources */,
+				0444FD4521FCAE0A0057CF45 /* DetailHomeFeedController.swift in Sources */,
+				0444FD4621FCAE0A0057CF45 /* GroupMessagerController.swift in Sources */,
+				0444FD4721FCAE0A0057CF45 /* StretchyHeaderLayout.swift in Sources */,
+				0444FD4821FCAE0A0057CF45 /* Extensions+UIView.swift in Sources */,
+				0444FD4921FCAE0A0057CF45 /* StretchyController.swift in Sources */,
+				0444FD4A21FCAE0A0057CF45 /* Generic+ServerAPI.swift in Sources */,
+				0444FD4B21FCAE0A0057CF45 /* ImageView+Extension.swift in Sources */,
+				0444FD4C21FCAE0A0057CF45 /* ChatLogController.swift in Sources */,
+				0444FD4D21FCAE0A0057CF45 /* MessageController.swift in Sources */,
+				0444FD4E21FCAE0A0057CF45 /* NewMessageController.swift in Sources */,
+				0444FD4F21FCAE0A0057CF45 /* AnimationLabel.swift in Sources */,
+				0444FD5021FCAE0A0057CF45 /* BarChartController.swift in Sources */,
+				0444FD5121FCAE0A0057CF45 /* SwipePage.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9C7B37D421C112E6009A6C14 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -515,6 +687,46 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		0444FD5921FCAE0A0057CF45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7269DBA2686D8C7426B79718 /* Pods-projectDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = projectDemo/projectDemo.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BJSGM4MXT8;
+				INFOPLIST_FILE = "projectDemo copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = vn.dev.projectDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0444FD5A21FCAE0A0057CF45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 247C319891853E9400FA1A44 /* Pods-projectDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = projectDemo/projectDemo.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BJSGM4MXT8;
+				INFOPLIST_FILE = "projectDemo copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = vn.dev.projectDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		9C7B37E821C112E7009A6C14 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -672,6 +884,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0444FD5821FCAE0A0057CF45 /* Build configuration list for PBXNativeTarget "projectDemo dev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0444FD5921FCAE0A0057CF45 /* Debug */,
+				0444FD5A21FCAE0A0057CF45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9C7B37D321C112E6009A6C14 /* Build configuration list for PBXProject "projectDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
