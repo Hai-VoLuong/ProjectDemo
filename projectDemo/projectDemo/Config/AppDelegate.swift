@@ -53,7 +53,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     /// identifier == "Test" ở LocalPushNotificationController
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         if response.notification.request.identifier == "Test" {
-            print("Test Identifier Identifier")
+            
+            let application = UIApplication.shared
+            if application.applicationState == .active {
+                window?.rootViewController = UINavigationController(rootViewController: LocalPushNotificationController())
+            }
+            
+            if application.applicationState == .background {
+                window?.rootViewController = UINavigationController(rootViewController: LocalPushNotificationController())
+            }
         }
         completionHandler()
     }
