@@ -23,6 +23,7 @@
 		04C2EC4321DFA9EA0049DBD6 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C2EC4221DFA9EA0049DBD6 /* LoginController.swift */; };
 		04D2DC6A21C94BC10054E2EE /* LayoutStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2DC6921C94BC10054E2EE /* LayoutStackViewController.swift */; };
 		04DF2B5F21C1835E00BAA5E8 /* Generic+CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DF2B5E21C1835E00BAA5E8 /* Generic+CollectionViewController.swift */; };
+		04F47C6321FC81D80078A6B1 /* LocalPushNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F47C6221FC81D80078A6B1 /* LocalPushNotificationController.swift */; };
 		9C00318321C34FBA00110EB8 /* Generic+ServerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C00318221C34FBA00110EB8 /* Generic+ServerAPI.swift */; };
 		9C00318921C3A52800110EB8 /* Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C00318821C3A52800110EB8 /* Schema.swift */; };
 		9C00318B21C3AA6700110EB8 /* DetailHomeFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C00318A21C3AA6700110EB8 /* DetailHomeFeedController.swift */; };
@@ -63,6 +64,7 @@
 		04C2EC4221DFA9EA0049DBD6 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		04D2DC6921C94BC10054E2EE /* LayoutStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutStackViewController.swift; sourceTree = "<group>"; };
 		04DF2B5E21C1835E00BAA5E8 /* Generic+CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Generic+CollectionViewController.swift"; sourceTree = "<group>"; };
+		04F47C6221FC81D80078A6B1 /* LocalPushNotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushNotificationController.swift; sourceTree = "<group>"; };
 		247C319891853E9400FA1A44 /* Pods-projectDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-projectDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-projectDemo/Pods-projectDemo.release.xcconfig"; sourceTree = "<group>"; };
 		7269DBA2686D8C7426B79718 /* Pods-projectDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-projectDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-projectDemo/Pods-projectDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		9C00318221C34FBA00110EB8 /* Generic+ServerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Generic+ServerAPI.swift"; sourceTree = "<group>"; };
@@ -175,6 +177,14 @@
 			path = 5LayoutStackView;
 			sourceTree = "<group>";
 		};
+		04F47C6121FC81A30078A6B1 /* 15LocalPushNotification */ = {
+			isa = PBXGroup;
+			children = (
+				04F47C6221FC81D80078A6B1 /* LocalPushNotificationController.swift */,
+			);
+			path = 15LocalPushNotification;
+			sourceTree = "<group>";
+		};
 		88332265E45DDD779922E7A2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +272,7 @@
 				9CD1C52521D20D8200AF412F /* 12BarChart */,
 				9CD1C52B21D23D3D00AF412F /* 13GroupMessager */,
 				04C2EC3F21DFA17C0049DBD6 /* 14firebaseMessage */,
+				04F47C6121FC81A30078A6B1 /* 15LocalPushNotification */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -478,6 +489,7 @@
 				042B2BF221DC710A007D125D /* StretchyHeaderCell.swift in Sources */,
 				9CC7518521C8F6EA0013BF5E /* ShimmerController.swift in Sources */,
 				04C2EC4321DFA9EA0049DBD6 /* LoginController.swift in Sources */,
+				04F47C6321FC81D80078A6B1 /* LocalPushNotificationController.swift in Sources */,
 				9C7B37F321C119C4009A6C14 /* Generic+TableViewController.swift in Sources */,
 				0431119B21CD51D30036C7F0 /* ChainAnimationCell.swift in Sources */,
 				9CCF28D221C79F10006C3F83 /* NewItemController.swift in Sources */,

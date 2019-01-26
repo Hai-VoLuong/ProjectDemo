@@ -41,7 +41,9 @@ final class MainController: BaseTableView<MainCell, String> {
                  "Animation Like Facebook",
                  "A Bar Chart",
                  "Groups Messages",
-                 "Firebase Message"]
+                 "Firebase Message",
+                 "Local push notification"
+                 ]
         
         view.backgroundColor = .white
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(handleNext))
@@ -74,6 +76,7 @@ extension MainController {
         case barChart
         case groupMessager
         case firebaseMessage
+        case localPushNotification
 
         func controller() -> UIViewController {
             let vc: UIViewController!
@@ -106,6 +109,8 @@ extension MainController {
                 vc = GroupMessagerController()
             case .firebaseMessage:
                 vc = MessageController()
+            case .localPushNotification:
+                vc = LocalPushNotificationController()
             }
             return vc
         }
